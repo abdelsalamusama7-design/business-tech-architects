@@ -15,11 +15,13 @@ import IndustriesPage from "@/pages/IndustriesPage";
 import IndustryDetailPage from "@/pages/IndustryDetailPage";
 import SolutionsPage from "@/pages/SolutionsPage";
 import PortfolioPage from "@/pages/PortfolioPage";
+import ProjectDetailPage from "@/pages/ProjectDetailPage";
 import BlogPage from "@/pages/BlogPage";
 import PricingPage from "@/pages/PricingPage";
 import ConsultationPage from "@/pages/ConsultationPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
+import AdminDashboard from "@/pages/AdminDashboard";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,11 +42,13 @@ const App = () => (
               <Route path="/industries/:slug" element={<IndustryDetailPage />} />
               <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/portfolio/:id" element={<ProjectDetailPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/consultation" element={<ConsultationPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/admin" element={<AdminDashboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
