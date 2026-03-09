@@ -9,57 +9,70 @@ import restaurantPos from '@/assets/portfolio/restaurant-pos.jpg';
 import pharmacyPlatform from '@/assets/portfolio/pharmacy-platform.jpg';
 import hrSystem from '@/assets/portfolio/hr-system.jpg';
 import realEstate from '@/assets/portfolio/real-estate.jpg';
+import digitalMenu from '@/assets/portfolio/digital-menu.jpg';
+import aiAssistant from '@/assets/portfolio/ai-assistant.jpg';
+import inventorySystem from '@/assets/portfolio/inventory-system.jpg';
+import deliveryPlatform from '@/assets/portfolio/delivery-platform.jpg';
+import crmSystem from '@/assets/portfolio/crm-system.jpg';
+import bookingSystem from '@/assets/portfolio/booking-system.jpg';
+import logisticsPlatform from '@/assets/portfolio/logistics-platform.jpg';
+import schoolManagement from '@/assets/portfolio/school-management.jpg';
+import gymManagement from '@/assets/portfolio/gym-management.jpg';
+import hotelBooking from '@/assets/portfolio/hotel-booking.jpg';
+import eventPlatform from '@/assets/portfolio/event-platform.jpg';
+import retailPos from '@/assets/portfolio/retail-pos.jpg';
+import hospitalPlatform from '@/assets/portfolio/hospital-platform.jpg';
 
 export const categories = [
   { ar: 'الكل', en: 'All' },
-  { ar: 'نظام إدارة عيادات', en: 'Clinic Management' },
-  { ar: 'منصة صيدلة', en: 'Pharmacy Platform' },
-  { ar: 'نظام POS مطاعم', en: 'Restaurant POS' },
-  { ar: 'قائمة رقمية', en: 'Digital Menu' },
-  { ar: 'مساعد أعمال ذكي', en: 'AI Assistant' },
-  { ar: 'نظام إدارة مدارس', en: 'School Management' },
-  { ar: 'نظام HR', en: 'HR System' },
-  { ar: 'نظام مخزون', en: 'Inventory System' },
-  { ar: 'منصة مستشفيات', en: 'Hospital Platform' },
-  { ar: 'منصة توصيل', en: 'Delivery Platform' },
-  { ar: 'منصة عقارية', en: 'Real Estate' },
-  { ar: 'سوق إلكتروني', en: 'Marketplace' },
-  { ar: 'نظام حجوزات', en: 'Booking System' },
-  { ar: 'نظام CRM', en: 'CRM System' },
-  { ar: 'منصة تدريب', en: 'Training Platform' },
-  { ar: 'نظام محاسبة', en: 'Accounting System' },
-  { ar: 'منصة لوجستية', en: 'Logistics Platform' },
-  { ar: 'حجز مواعيد طبية', en: 'Medical Appointments' },
-  { ar: 'نظام POS تجزئة', en: 'Retail POS' },
-  { ar: 'نظام إدارة صالات رياضية', en: 'Gym Management' },
-  { ar: 'منصة حجز فنادق', en: 'Hotel Booking' },
-  { ar: 'منصة فعاليات', en: 'Event Platform' },
+  { ar: 'نظام إدارة عيادات', en: 'Clinic Management' },       // 1
+  { ar: 'منصة صيدلة', en: 'Pharmacy Platform' },              // 2
+  { ar: 'نظام POS مطاعم', en: 'Restaurant POS' },            // 3
+  { ar: 'قائمة رقمية', en: 'Digital Menu' },                   // 4
+  { ar: 'مساعد أعمال ذكي', en: 'AI Assistant' },              // 5
+  { ar: 'نظام إدارة مدارس', en: 'School Management' },        // 6
+  { ar: 'نظام HR', en: 'HR System' },                          // 7
+  { ar: 'نظام مخزون', en: 'Inventory System' },               // 8
+  { ar: 'منصة مستشفيات', en: 'Hospital Platform' },           // 9
+  { ar: 'منصة توصيل', en: 'Delivery Platform' },              // 10
+  { ar: 'منصة عقارية', en: 'Real Estate' },                    // 11
+  { ar: 'سوق إلكتروني', en: 'Marketplace' },                  // 12
+  { ar: 'نظام حجوزات', en: 'Booking System' },                // 13
+  { ar: 'نظام CRM', en: 'CRM System' },                       // 14
+  { ar: 'منصة تدريب', en: 'Training Platform' },              // 15
+  { ar: 'نظام محاسبة', en: 'Accounting System' },             // 16
+  { ar: 'منصة لوجستية', en: 'Logistics Platform' },           // 17
+  { ar: 'حجز مواعيد طبية', en: 'Medical Appointments' },      // 18
+  { ar: 'نظام POS تجزئة', en: 'Retail POS' },                // 19
+  { ar: 'نظام إدارة صالات رياضية', en: 'Gym Management' },    // 20
+  { ar: 'منصة حجز فنادق', en: 'Hotel Booking' },             // 21
+  { ar: 'منصة فعاليات', en: 'Event Platform' },               // 22
 ];
 
-// Image map by category index for generated projects
+// Each category has its own unique screenshot
 const categoryImages: Record<number, string> = {
   1: clinicMgmt,
   2: pharmacyPlatform,
   3: restaurantPos,
-  4: restaurantPos,
-  5: hrSystem,
-  6: teachSparkle,
+  4: digitalMenu,
+  5: aiAssistant,
+  6: schoolManagement,
   7: hrSystem,
-  8: pharmacyPlatform,
-  9: clinicMgmt,
-  10: restaurantPos,
+  8: inventorySystem,
+  9: hospitalPlatform,
+  10: deliveryPlatform,
   11: realEstate,
   12: elegantAccessory,
-  13: realEstate,
-  14: hrSystem,
+  13: bookingSystem,
+  14: crmSystem,
   15: teachSparkle,
   16: finFeeder,
-  17: restaurantPos,
+  17: logisticsPlatform,
   18: clinicMgmt,
-  19: elegantAccessory,
-  20: hrSystem,
-  21: realEstate,
-  22: glamGala,
+  19: retailPos,
+  20: gymManagement,
+  21: hotelBooking,
+  22: eventPlatform,
 };
 
 export interface Project {
@@ -150,22 +163,29 @@ function generateProjects(): Project[] {
   let id = 6;
 
   const descTemplatesAr = [
-    'نظام متكامل لإدارة العمليات وتحسين الكفاءة التشغيلية.',
-    'منصة ذكية مصممة لتبسيط سير العمل وزيادة الإنتاجية.',
-    'حل تقني شامل يساعد في أتمتة العمليات اليومية.',
-    'نظام متطور يوفر تحكم كامل في جميع جوانب العمل.',
+    'نظام متكامل لإدارة العمليات وتحسين الكفاءة التشغيلية مع لوحة تحكم متقدمة.',
+    'منصة ذكية مصممة لتبسيط سير العمل وزيادة الإنتاجية بأحدث التقنيات.',
+    'حل تقني شامل يساعد في أتمتة العمليات اليومية وتقليل التكاليف.',
+    'نظام متطور يوفر تحكم كامل في جميع جوانب العمل مع تقارير تحليلية.',
   ];
   const descTemplatesEn = [
-    'An integrated system for managing operations and improving operational efficiency.',
-    'A smart platform designed to simplify workflow and increase productivity.',
-    'A comprehensive tech solution that helps automate daily operations.',
-    'An advanced system providing full control over all aspects of business.',
+    'An integrated system for managing operations and improving efficiency with an advanced dashboard.',
+    'A smart platform designed to simplify workflow and boost productivity with the latest technologies.',
+    'A comprehensive tech solution that helps automate daily operations and reduce costs.',
+    'An advanced system providing full control over all business aspects with analytical reports.',
+  ];
+
+  const featureSets = [
+    { ar: ['لوحة تحكم متقدمة', 'تقارير وإحصائيات', 'إدارة المستخدمين', 'تصميم متجاوب', 'إشعارات ذكية'], en: ['Advanced Dashboard', 'Reports & Analytics', 'User Management', 'Responsive Design', 'Smart Notifications'] },
+    { ar: ['إدارة شاملة', 'تكامل مع أنظمة خارجية', 'نظام صلاحيات', 'تطبيق موبايل', 'دعم متعدد اللغات'], en: ['Full Management', 'External System Integration', 'Permissions System', 'Mobile App', 'Multi-language Support'] },
+    { ar: ['أتمتة العمليات', 'تخصيص كامل', 'نسخ احتياطي', 'أمان متقدم', 'واجهة سهلة'], en: ['Process Automation', 'Full Customization', 'Data Backup', 'Advanced Security', 'Easy Interface'] },
   ];
 
   while (projects.length < 100) {
     const catIdx = ((id - 1) % catNames.length) + 1;
     const version = Math.floor(id / catNames.length) + 1;
     const descIdx = id % descTemplatesAr.length;
+    const featureIdx = id % featureSets.length;
     projects.push({
       id: `project-${id}`,
       title: `${catNames[catIdx - 1].en} Pro v${version}`,
@@ -175,8 +195,8 @@ function generateProjects(): Project[] {
       image: categoryImages[catIdx] || clinicMgmt,
       descriptionAr: descTemplatesAr[descIdx],
       descriptionEn: descTemplatesEn[descIdx],
-      featuresAr: ['لوحة تحكم متقدمة', 'تقارير وإحصائيات', 'إدارة المستخدمين', 'تصميم متجاوب'],
-      featuresEn: ['Advanced Dashboard', 'Reports & Analytics', 'User Management', 'Responsive Design'],
+      featuresAr: featureSets[featureIdx].ar,
+      featuresEn: featureSets[featureIdx].en,
       techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
     });
     id++;
