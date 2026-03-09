@@ -83,17 +83,27 @@ const ProjectDetailPage = () => {
               ))}
             </div>
 
-            {project.url && (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-opacity"
-              >
-                {lang === 'ar' ? 'عرض المشروع مباشرة' : 'View Live Project'}
-                <ExternalLink size={20} />
-              </a>
-            )}
+            <div className="flex flex-wrap gap-3">
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-opacity"
+                >
+                  {lang === 'ar' ? 'عرض المشروع مباشرة' : 'View Live Project'}
+                  <ExternalLink size={20} />
+                </a>
+              ) : (
+                <Link
+                  to={`/demo/${project.id}`}
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-opacity"
+                >
+                  {lang === 'ar' ? 'عرض العرض التوضيحي' : 'View Live Demo'}
+                  <ExternalLink size={20} />
+                </Link>
+              )}
+            </div>
           </motion.div>
 
           {/* Sidebar */}
