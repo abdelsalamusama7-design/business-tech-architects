@@ -12,6 +12,7 @@ import AIChatbot from "@/components/AIChatbot";
 import HomePage from "@/pages/HomePage";
 import ServicesPage from "@/pages/ServicesPage";
 import IndustriesPage from "@/pages/IndustriesPage";
+import IndustryDetailPage from "@/pages/IndustryDetailPage";
 import SolutionsPage from "@/pages/SolutionsPage";
 import PortfolioPage from "@/pages/PortfolioPage";
 import BlogPage from "@/pages/BlogPage";
