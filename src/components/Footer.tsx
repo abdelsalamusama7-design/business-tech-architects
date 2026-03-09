@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Phone, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const quickLinks = [
     { path: '/services', label: t('nav.services') },
