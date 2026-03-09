@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <Link
               to="/consultation"
-              className="hidden md:inline-flex px-4 py-2 rounded-lg hero-gradient text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+              className="hidden lg:inline-flex px-3 py-1.5 rounded-lg hero-gradient text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity whitespace-nowrap"
             >
               {t('nav.consultation')}
             </Link>
