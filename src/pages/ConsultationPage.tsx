@@ -1,16 +1,36 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { MessageCircle, CheckCircle2, Send } from 'lucide-react';
+import { MessageCircle, CheckCircle2, Send, Loader2 } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 const ConsultationPage = () => {
   const { t, lang } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', company: '', businessType: '', projectIdea: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    try {
+      const { error } = await supabase.from('consultations').insert({
+        name: form.name.trim(),
+        phone: form.phone.trim(),
+        company: form.company.trim(),
+        business_type: form.businessType,
+        project_idea: form.projectIdea.trim(),
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      toast.success(lang === 'ar' ? 'تم إرسال طلبك بنجاح!' : 'Request submitted successfully!');
+    } catch (err) {
+      console.error('Consultation submit error:', err);
+      toast.error(lang === 'ar' ? 'حدث خطأ، حاول مرة أخرى' : 'Something went wrong, please try again');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -99,9 +119,10 @@ const ConsultationPage = () => {
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
+                disabled={loading}
+                className="w-full py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2 disabled:opacity-50"
               >
-                <Send size={20} /> {t('consultation.submit')}
+                {loading ? <Loader2 size={20} className="animate-spin" /> : <Send size={20} />} {t('consultation.submit')}
               </button>
             </motion.form>
           )}
