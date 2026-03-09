@@ -12,6 +12,7 @@ import AIChatbot from "@/components/AIChatbot";
 import HomePage from "@/pages/HomePage";
 import ServicesPage from "@/pages/ServicesPage";
 import IndustriesPage from "@/pages/IndustriesPage";
+import IndustryDetailPage from "@/pages/IndustryDetailPage";
 import SolutionsPage from "@/pages/SolutionsPage";
 import PortfolioPage from "@/pages/PortfolioPage";
 import BlogPage from "@/pages/BlogPage";
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/" element={<HomePage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/industries" element={<IndustriesPage />} />
+              <Route path="/industries/:slug" element={<IndustryDetailPage />} />
               <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/blog" element={<BlogPage />} />

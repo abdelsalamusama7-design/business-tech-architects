@@ -1,22 +1,22 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { Stethoscope, UtensilsCrossed, ShoppingBag, Pill, GraduationCap, Building, Truck, Briefcase, ShoppingCart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Stethoscope, UtensilsCrossed, ShoppingBag, Pill, GraduationCap, Building, Truck, Briefcase, ShoppingCart, ArrowLeft, ArrowRight } from 'lucide-react';
 
 const industries = [
-  { icon: Stethoscope, ar: 'الرعاية الصحية', en: 'Healthcare', descAr: 'أنظمة إدارة العيادات والمستشفيات وحجز المواعيد', descEn: 'Clinic and hospital management systems with appointment booking' },
-  { icon: UtensilsCrossed, ar: 'المطاعم', en: 'Restaurants', descAr: 'أنظمة نقاط البيع والقوائم الرقمية وإدارة الطلبات', descEn: 'POS systems, digital menus, and order management' },
-  { icon: ShoppingBag, ar: 'التجزئة', en: 'Retail', descAr: 'أنظمة إدارة المخزون ونقاط البيع والتجارة الإلكترونية', descEn: 'Inventory management, POS, and e-commerce systems' },
-  { icon: Pill, ar: 'الصيدليات', en: 'Pharmacies', descAr: 'منصات إدارة الأدوية والوصفات والمخزون', descEn: 'Medicine management, prescriptions, and inventory platforms' },
-  { icon: GraduationCap, ar: 'التعليم', en: 'Education', descAr: 'أنظمة إدارة المدارس والتعلم الإلكتروني', descEn: 'School management and e-learning systems' },
-  { icon: Building, ar: 'العقارات', en: 'Real Estate', descAr: 'منصات إدارة العقارات والحجوزات', descEn: 'Property management and booking platforms' },
-  { icon: Truck, ar: 'اللوجستيات', en: 'Logistics', descAr: 'أنظمة إدارة الشحن والتتبع والتوصيل', descEn: 'Shipping, tracking, and delivery management systems' },
-  { icon: Briefcase, ar: 'الشركات الخدمية', en: 'Service Companies', descAr: 'أنظمة CRM وإدارة المشاريع والموارد البشرية', descEn: 'CRM, project management, and HR systems' },
-  { icon: ShoppingCart, ar: 'التجارة الإلكترونية', en: 'E-commerce', descAr: 'متاجر إلكترونية متكاملة مع بوابات دفع', descEn: 'Complete online stores with payment gateways' },
+  { icon: Stethoscope, ar: 'الرعاية الصحية', en: 'Healthcare', slug: 'healthcare', descAr: 'أنظمة إدارة العيادات والمستشفيات وحجز المواعيد', descEn: 'Clinic and hospital management systems with appointment booking' },
+  { icon: UtensilsCrossed, ar: 'المطاعم', en: 'Restaurants', slug: 'restaurants', descAr: 'أنظمة نقاط البيع والقوائم الرقمية وإدارة الطلبات', descEn: 'POS systems, digital menus, and order management' },
+  { icon: ShoppingBag, ar: 'التجزئة', en: 'Retail', slug: 'retail', descAr: 'أنظمة إدارة المخزون ونقاط البيع والتجارة الإلكترونية', descEn: 'Inventory management, POS, and e-commerce systems' },
+  { icon: Pill, ar: 'الصيدليات', en: 'Pharmacies', slug: 'pharmacies', descAr: 'منصات إدارة الأدوية والوصفات والمخزون', descEn: 'Medicine management, prescriptions, and inventory platforms' },
+  { icon: GraduationCap, ar: 'التعليم', en: 'Education', slug: 'education', descAr: 'أنظمة إدارة المدارس والتعلم الإلكتروني', descEn: 'School management and e-learning systems' },
+  { icon: Building, ar: 'العقارات', en: 'Real Estate', slug: 'real-estate', descAr: 'منصات إدارة العقارات والحجوزات', descEn: 'Property management and booking platforms' },
+  { icon: Truck, ar: 'اللوجستيات', en: 'Logistics', slug: 'logistics', descAr: 'أنظمة إدارة الشحن والتتبع والتوصيل', descEn: 'Shipping, tracking, and delivery management systems' },
+  { icon: Briefcase, ar: 'الشركات الخدمية', en: 'Service Companies', slug: 'services', descAr: 'أنظمة CRM وإدارة المشاريع والموارد البشرية', descEn: 'CRM, project management, and HR systems' },
+  { icon: ShoppingCart, ar: 'التجارة الإلكترونية', en: 'E-commerce', slug: 'ecommerce', descAr: 'متاجر إلكترونية متكاملة مع بوابات دفع', descEn: 'Complete online stores with payment gateways' },
 ];
 
 const IndustriesPage = () => {
-  const { lang } = useLanguage();
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   return (
     <div className="min-h-screen pt-24 pb-20">
@@ -36,13 +36,21 @@ const IndustriesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="card-gradient rounded-2xl p-8 border border-border hover:glow-primary transition-all duration-300 group"
               >
-                <div className="w-14 h-14 rounded-2xl hero-gradient flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Icon size={28} className="text-primary-foreground" />
-                </div>
-                <h3 className="font-bold text-foreground text-xl mb-3">{lang === 'ar' ? ind.ar : ind.en}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{lang === 'ar' ? ind.descAr : ind.descEn}</p>
+                <Link
+                  to={`/industries/${ind.slug}`}
+                  className="block card-gradient rounded-2xl p-8 border border-border hover:glow-primary transition-all duration-300 group h-full"
+                >
+                  <div className="w-14 h-14 rounded-2xl hero-gradient flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Icon size={28} className="text-primary-foreground" />
+                  </div>
+                  <h3 className="font-bold text-foreground text-xl mb-3">{lang === 'ar' ? ind.ar : ind.en}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{lang === 'ar' ? ind.descAr : ind.descEn}</p>
+                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    {t('common.learnMore')}
+                    {lang === 'ar' ? <ArrowLeft size={14} /> : <ArrowRight size={14} />}
+                  </span>
+                </Link>
               </motion.div>
             );
           })}
