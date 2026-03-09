@@ -131,7 +131,59 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Portfolio Preview */}
+      <section className="py-20 bg-card/50 border-t border-border">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t('portfolio.title')}</h2>
+            <p className="text-muted-foreground text-lg">{t('portfolio.subtitle')}</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {allProjects.slice(0, 8).map((project, i) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <Link
+                  to={`/portfolio/${project.id}`}
+                  className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300"
+                >
+                  <div className="h-36 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={lang === 'ar' ? project.titleAr : project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <p className="text-xs text-muted-foreground mb-1">
+                      {lang === 'ar' ? categories[project.catIndex]?.ar : categories[project.catIndex]?.en}
+                    </p>
+                    <h3 className="font-semibold text-foreground text-sm">{lang === 'ar' ? project.titleAr : project.title}</h3>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link to="/portfolio" className="text-primary font-semibold hover:underline inline-flex items-center gap-1">
+              {t('common.viewAll')} <Arrow size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="hero-gradient rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
