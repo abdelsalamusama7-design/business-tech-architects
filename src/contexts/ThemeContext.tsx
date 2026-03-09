@@ -13,7 +13,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [theme, setTheme] = useState<Theme>(() => {
     return (localStorage.getItem('theme') as Theme) || 'dark';
   });
-  });
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
