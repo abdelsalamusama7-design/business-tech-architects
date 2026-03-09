@@ -16,6 +16,7 @@ import IndustryDetailPage from "@/pages/IndustryDetailPage";
 import SolutionsPage from "@/pages/SolutionsPage";
 import PortfolioPage from "@/pages/PortfolioPage";
 import ProjectDetailPage from "@/pages/ProjectDetailPage";
+import DemoPage from "@/pages/DemoPage";
 import BlogPage from "@/pages/BlogPage";
 import PricingPage from "@/pages/PricingPage";
 import ConsultationPage from "@/pages/ConsultationPage";
@@ -43,6 +44,7 @@ const App = () => (
               <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
               <Route path="/portfolio/:id" element={<ProjectDetailPage />} />
+              <Route path="/demo/:id" element={<DemoPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/consultation" element={<ConsultationPage />} />
