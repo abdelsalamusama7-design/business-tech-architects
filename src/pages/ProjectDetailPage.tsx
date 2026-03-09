@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2, Code2 } from 'lucide-react';
-import { getProjectById, categories } from '@/data/portfolioData';
+import { getProjectById, categories, allProjects } from '@/data/portfolioData';
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
