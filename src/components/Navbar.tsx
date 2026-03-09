@@ -35,12 +35,12 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-0.5">
             {links.map(link => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-2 py-1.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${
                   location.pathname === link.path
                     ? 'text-primary bg-primary/10'
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted'
@@ -54,7 +54,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <Link
               to="/consultation"
-              className="hidden md:inline-flex px-4 py-2 rounded-lg hero-gradient text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+              className="hidden lg:inline-flex px-3 py-1.5 rounded-lg hero-gradient text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity whitespace-nowrap"
             >
               {t('nav.consultation')}
             </Link>
@@ -76,7 +76,7 @@ const Navbar = () => {
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
             >
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -91,7 +91,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass-strong border-t border-border"
+            className="md:hidden glass-strong border-t border-border"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
               {links.map(link => (
