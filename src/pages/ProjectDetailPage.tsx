@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2, Code2 } from 'lucide-react';
-import { getProjectById, categories } from '@/data/portfolioData';
+import { getProjectById, categories, allProjects } from '@/data/portfolioData';
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -135,6 +135,54 @@ const ProjectDetailPage = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Similar Projects */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+            {lang === 'ar' ? 'مشاريع مشابهة' : 'Similar Projects'}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {allProjects
+              .filter(p => p.catIndex === project.catIndex && p.id !== project.id)
+              .slice(0, 4)
+              .map((p, i) => (
+                <motion.div
+                  key={p.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <Link
+                    to={`/portfolio/${p.id}`}
+                    className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300"
+                  >
+                    <div className="h-36 overflow-hidden">
+                      <img
+                        src={p.image}
+                        alt={lang === 'ar' ? p.titleAr : p.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-xs text-muted-foreground mb-1">
+                        {lang === 'ar' ? categories[p.catIndex]?.ar : categories[p.catIndex]?.en}
+                      </p>
+                      <h3 className="font-semibold text-foreground text-sm">
+                        {lang === 'ar' ? p.titleAr : p.title}
+                      </h3>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );
