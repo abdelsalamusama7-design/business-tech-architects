@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Phone, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const quickLinks = [
     { path: '/services', label: t('nav.services') },
@@ -54,7 +54,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center">
+        <div className="border-t border-border mt-8 pt-8 text-center space-y-2">
+          <p className="text-sm font-semibold text-foreground">
+            {lang === 'ar' ? 'تنفيذ وتصميم' : 'Designed & Developed by'} Instatech Labs
+          </p>
+          <p className="text-sm text-muted-foreground" dir="ltr">
+            للتواصل: 01227080430 / 01554400044
+          </p>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Instatech Labs. {t('footer.rights')}.
           </p>
