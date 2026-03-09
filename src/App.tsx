@@ -16,6 +16,7 @@ import IndustryDetailPage from "@/pages/IndustryDetailPage";
 import SolutionsPage from "@/pages/SolutionsPage";
 import PortfolioPage from "@/pages/PortfolioPage";
 import ProjectDetailPage from "@/pages/ProjectDetailPage";
+import DemoPage from "@/pages/DemoPage";
 import BlogPage from "@/pages/BlogPage";
 import PricingPage from "@/pages/PricingPage";
 import ConsultationPage from "@/pages/ConsultationPage";
