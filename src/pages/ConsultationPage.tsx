@@ -119,9 +119,10 @@ const ConsultationPage = () => {
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
+                disabled={loading}
+                className="w-full py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2 disabled:opacity-50"
               >
-                <Send size={20} /> {t('consultation.submit')}
+                {loading ? <Loader2 size={20} className="animate-spin" /> : <Send size={20} />} {t('consultation.submit')}
               </button>
             </motion.form>
           )}
