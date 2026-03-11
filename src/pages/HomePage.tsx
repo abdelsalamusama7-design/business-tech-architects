@@ -112,10 +112,8 @@ const HomePage = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                 >
-                  <a
-                    href={project.url || `/demo/${project.id}`}
-                    target={project.url ? "_blank" : "_self"}
-                    rel={project.url ? "noopener noreferrer" : undefined}
+                  <Link
+                    to={`/portfolio/${project.id}`}
                     className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300 relative"
                   >
                     <div className="h-40 overflow-hidden relative">
@@ -127,7 +125,7 @@ const HomePage = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
                         <span className="px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold inline-flex items-center gap-1.5 shadow-lg">
-                          <Globe size={12} /> {lang === 'ar' ? 'زيارة الموقع' : 'Visit Site'}
+                          {lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}
                         </span>
                       </div>
                       {project.url && (
@@ -142,7 +140,7 @@ const HomePage = () => {
                       </p>
                       <h3 className="font-semibold text-foreground text-sm">{lang === 'ar' ? project.titleAr : project.title}</h3>
                     </div>
-                  </a>
+                  </Link>
                 </motion.div>
               );
             })}

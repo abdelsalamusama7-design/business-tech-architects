@@ -2,7 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Globe } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { categories, allProjects } from '@/data/portfolioData';
 
 const PortfolioPage = () => {
@@ -51,10 +51,8 @@ const PortfolioPage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: (i % 12) * 0.03 }}
               >
-                <a
-                  href={project.url || `/demo/${project.id}`}
-                  target={project.url ? "_blank" : "_self"}
-                  rel={project.url ? "noopener noreferrer" : undefined}
+                <Link
+                  to={`/portfolio/${project.id}`}
                   className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300 relative"
                 >
                   <div className="h-44 overflow-hidden relative">
@@ -66,7 +64,7 @@ const PortfolioPage = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
                       <span className="px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold inline-flex items-center gap-1.5 shadow-lg">
-                        <Globe size={12} /> {lang === 'ar' ? 'زيارة الموقع' : 'Visit Site'}
+                        {lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}
                       </span>
                     </div>
                     {project.url && (
@@ -86,7 +84,7 @@ const PortfolioPage = () => {
                       <ExternalLink size={12} /> {lang === 'ar' ? 'عرض المشروع' : 'View Project'}
                     </span>
                   </div>
-                </a>
+                </Link>
               </motion.div>
             ))}
         </div>
