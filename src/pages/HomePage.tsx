@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, MessageCircle, Code, Smartphone, Brain, ShoppingCart, Building2, Stethoscope, UtensilsCrossed, Pill, CheckCircle2, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, MessageCircle, Code, Smartphone, Brain, ShoppingCart, Building2, Stethoscope, UtensilsCrossed, Pill, CheckCircle2, ExternalLink, Globe } from 'lucide-react';
 import { allProjects, categories } from '@/data/portfolioData';
 
 const services = [
@@ -104,25 +104,6 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {allProjects.slice(0, 8).map((project, i) => {
-              const cardClass = "block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300";
-              const cardContent = (
-                <>
-                  <div className="h-36 overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={lang === 'ar' ? project.titleAr : project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <p className="text-xs text-muted-foreground mb-1">
-                      {lang === 'ar' ? categories[project.catIndex]?.ar : categories[project.catIndex]?.en}
-                    </p>
-                    <h3 className="font-semibold text-foreground text-sm">{lang === 'ar' ? project.titleAr : project.title}</h3>
-                  </div>
-                </>
-              );
               return (
                 <motion.div
                   key={project.id}
@@ -131,11 +112,37 @@ const HomePage = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                 >
-                  {project.url ? (
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className={cardClass}>{cardContent}</a>
-                  ) : (
-                    <Link to={`/demo/${project.id}`} className={cardClass}>{cardContent}</Link>
-                  )}
+                  <a
+                    href={project.url || `/demo/${project.id}`}
+                    target={project.url ? "_blank" : "_self"}
+                    rel={project.url ? "noopener noreferrer" : undefined}
+                    className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300 relative"
+                  >
+                    <div className="h-40 overflow-hidden relative">
+                      <img
+                        src={project.image}
+                        alt={lang === 'ar' ? project.titleAr : project.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
+                        <span className="px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold inline-flex items-center gap-1.5 shadow-lg">
+                          <Globe size={12} /> {lang === 'ar' ? 'زيارة الموقع' : 'Visit Site'}
+                        </span>
+                      </div>
+                      {project.url && (
+                        <div className="absolute top-2 end-2 w-7 h-7 rounded-full bg-primary/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                          <ExternalLink size={13} className="text-primary-foreground" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-4">
+                      <p className="text-xs text-muted-foreground mb-1">
+                        {lang === 'ar' ? categories[project.catIndex]?.ar : categories[project.catIndex]?.en}
+                      </p>
+                      <h3 className="font-semibold text-foreground text-sm">{lang === 'ar' ? project.titleAr : project.title}</h3>
+                    </div>
+                  </a>
                 </motion.div>
               );
             })}
