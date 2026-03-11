@@ -145,27 +145,10 @@ const HomePage = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {allProjects.slice(0, 8).map((project, i) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-              >
-                {project.url ? (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300"
-                >
-                ) : (
-                <Link
-                  to={`/demo/${project.id}`}
-                  className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300"
-                >
-                )}
+            {allProjects.slice(0, 8).map((project, i) => {
+              const cardClass = "block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300";
+              const cardContent = (
+                <>
                   <div className="h-36 overflow-hidden">
                     <img
                       src={project.image}
@@ -180,9 +163,24 @@ const HomePage = () => {
                     </p>
                     <h3 className="font-semibold text-foreground text-sm">{lang === 'ar' ? project.titleAr : project.title}</h3>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
+                </>
+              );
+              return (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  {project.url ? (
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className={cardClass}>{cardContent}</a>
+                  ) : (
+                    <Link to={`/demo/${project.id}`} className={cardClass}>{cardContent}</Link>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
 
           <div className="text-center mt-10">
