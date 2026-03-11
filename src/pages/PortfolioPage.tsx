@@ -43,32 +43,7 @@ const PortfolioPage = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {displayed.map((project, i) => {
-            const cardClass = "block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300";
-            const cardContent = (
-              <>
-                <div className="h-40 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={lang === 'ar' ? project.titleAr : project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-4">
-                  <p className="text-xs text-muted-foreground mb-2">
-                    {lang === 'ar' ? categories[project.catIndex]?.ar : categories[project.catIndex]?.en}
-                  </p>
-                  <h3 className="font-semibold text-foreground text-sm mb-3">
-                    {lang === 'ar' ? project.titleAr : project.title}
-                  </h3>
-                  <span className="text-primary text-sm font-medium inline-flex items-center gap-1">
-                    {t('portfolio.view')} <ExternalLink size={14} />
-                  </span>
-                </div>
-              </>
-            );
-            return (
+          {displayed.map((project, i) => (
               <motion.div
                 key={`${project.id}-${i}`}
                 initial={{ opacity: 0, y: 20 }}
@@ -76,14 +51,44 @@ const PortfolioPage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: (i % 12) * 0.03 }}
               >
-                {project.url ? (
-                  <a href={project.url} target="_blank" rel="noopener noreferrer" className={cardClass}>{cardContent}</a>
-                ) : (
-                  <Link to={`/demo/${project.id}`} className={cardClass}>{cardContent}</Link>
-                )}
+                <a
+                  href={project.url || `/demo/${project.id}`}
+                  target={project.url ? "_blank" : "_self"}
+                  rel={project.url ? "noopener noreferrer" : undefined}
+                  className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300 relative"
+                >
+                  <div className="h-44 overflow-hidden relative">
+                    <img
+                      src={project.image}
+                      alt={lang === 'ar' ? project.titleAr : project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
+                      <span className="px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold inline-flex items-center gap-1.5 shadow-lg">
+                        <Globe size={12} /> {lang === 'ar' ? 'زيارة الموقع' : 'Visit Site'}
+                      </span>
+                    </div>
+                    {project.url && (
+                      <div className="absolute top-2 end-2 w-7 h-7 rounded-full bg-primary/90 backdrop-blur-sm flex items-center justify-center shadow-md">
+                        <ExternalLink size={13} className="text-primary-foreground" />
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-4">
+                    <p className="text-xs text-muted-foreground mb-2">
+                      {lang === 'ar' ? categories[project.catIndex]?.ar : categories[project.catIndex]?.en}
+                    </p>
+                    <h3 className="font-semibold text-foreground text-sm mb-2">
+                      {lang === 'ar' ? project.titleAr : project.title}
+                    </h3>
+                    <span className="text-primary text-xs font-medium inline-flex items-center gap-1">
+                      <ExternalLink size={12} /> {lang === 'ar' ? 'عرض المشروع' : 'View Project'}
+                    </span>
+                  </div>
+                </a>
               </motion.div>
-            );
-          })}
+            ))}
         </div>
 
         {!showAll && filtered.length > 12 && (
