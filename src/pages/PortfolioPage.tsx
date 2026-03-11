@@ -43,18 +43,10 @@ const PortfolioPage = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {displayed.map((project, i) => (
-            <motion.div
-              key={`${project.id}-${i}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (i % 12) * 0.03 }}
-            >
-              <Link
-                to={`/portfolio/${project.id}`}
-                className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300"
-              >
+          {displayed.map((project, i) => {
+            const cardClass = "block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300";
+            const cardContent = (
+              <>
                 <div className="h-40 overflow-hidden">
                   <img
                     src={project.image}
@@ -74,9 +66,24 @@ const PortfolioPage = () => {
                     {t('portfolio.view')} <ExternalLink size={14} />
                   </span>
                 </div>
-              </Link>
-            </motion.div>
-          ))}
+              </>
+            );
+            return (
+              <motion.div
+                key={`${project.id}-${i}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (i % 12) * 0.03 }}
+              >
+                {project.url ? (
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" className={cardClass}>{cardContent}</a>
+                ) : (
+                  <Link to={`/demo/${project.id}`} className={cardClass}>{cardContent}</Link>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
 
         {!showAll && filtered.length > 12 && (
