@@ -51,10 +51,19 @@ const PortfolioPage = () => {
               viewport={{ once: true }}
               transition={{ delay: (i % 12) * 0.03 }}
             >
-              <Link
-                to={`/portfolio/${project.id}`}
+              {project.url ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300"
               >
+              ) : (
+              <Link
+                to={`/demo/${project.id}`}
+                className="block card-gradient rounded-2xl border border-border overflow-hidden group hover:glow-primary transition-all duration-300"
+              >
+              )}
                 <div className="h-40 overflow-hidden">
                   <img
                     src={project.image}
