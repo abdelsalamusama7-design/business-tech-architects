@@ -420,11 +420,12 @@ function generateProjects(): Project[] {
     const version = Math.floor(id / catNames.length) + 1;
     const descIdx = id % descTemplatesAr.length;
     const featureIdx = id % featureSets.length;
+    const slug = `${catNames[catIdx - 1].en.toLowerCase().replace(/\s+/g, '-')}-pro-v${version}`;
     projects.push({
       id: `project-${id}`,
       title: `${catNames[catIdx - 1].en} Pro v${version}`,
       titleAr: `${catNames[catIdx - 1].ar} برو v${version}`,
-      url: '',
+      url: `https://${slug}.lovable.app`,
       catIndex: catIdx,
       image: categoryImages[catIdx] || clinicMgmt,
       descriptionAr: descTemplatesAr[descIdx],
