@@ -89,50 +89,8 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Services Preview */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t('services.title')}</h2>
-            <p className="text-muted-foreground text-lg">{t('services.subtitle')}</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="card-gradient rounded-2xl p-6 border border-border hover:glow-primary transition-all duration-300 group cursor-pointer"
-                >
-                  <div className="w-12 h-12 rounded-xl hero-gradient flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon size={24} className="text-primary-foreground" />
-                  </div>
-                  <h3 className="font-bold text-foreground text-lg">{t(service.key)}</h3>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link to="/services" className="text-primary font-semibold hover:underline inline-flex items-center gap-1">
-              {t('common.viewAll')} <Arrow size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Portfolio Preview */}
-      <section className="py-20 bg-card/50 border-t border-border">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -185,6 +143,48 @@ const HomePage = () => {
 
           <div className="text-center mt-10">
             <Link to="/portfolio" className="text-primary font-semibold hover:underline inline-flex items-center gap-1">
+              {t('common.viewAll')} <Arrow size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Preview */}
+      <section className="py-20 bg-card/50 border-t border-border">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t('services.title')}</h2>
+            <p className="text-muted-foreground text-lg">{t('services.subtitle')}</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, i) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="card-gradient rounded-2xl p-6 border border-border hover:glow-primary transition-all duration-300 group cursor-pointer"
+                >
+                  <div className="w-12 h-12 rounded-xl hero-gradient flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon size={24} className="text-primary-foreground" />
+                  </div>
+                  <h3 className="font-bold text-foreground text-lg">{t(service.key)}</h3>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link to="/services" className="text-primary font-semibold hover:underline inline-flex items-center gap-1">
               {t('common.viewAll')} <Arrow size={16} />
             </Link>
           </div>
