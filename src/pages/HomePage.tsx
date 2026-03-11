@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, MessageCircle, Code, Smartphone, Brain, ShoppingCart, Building2, Stethoscope, UtensilsCrossed, Pill, CheckCircle2, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, MessageCircle, Code, Smartphone, Brain, ShoppingCart, Building2, Stethoscope, UtensilsCrossed, Pill, CheckCircle2, ExternalLink, Globe } from 'lucide-react';
 import { allProjects, categories } from '@/data/portfolioData';
 
 const services = [
