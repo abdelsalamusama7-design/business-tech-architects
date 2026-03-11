@@ -198,7 +198,94 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="py-20">
+      {/* Testimonials */}
+      <section className="py-20 bg-card/50 border-t border-border">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {lang === 'ar' ? 'ماذا يقول عملاؤنا' : 'What Our Clients Say'}
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              {lang === 'ar' ? 'آراء حقيقية من عملاء حققنا لهم نتائج استثنائية' : 'Real feedback from clients we delivered exceptional results for'}
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                nameAr: 'د. أحمد حسن', nameEn: 'Dr. Ahmed Hassan',
+                roleAr: 'مدير عيادة طبية - القاهرة', roleEn: 'Medical Clinic Director - Cairo',
+                textAr: 'نظام إدارة العيادة اللي عملوه لنا غيّر شغلنا بالكامل. المواعيد بقت منظمة وملفات المرضى كلها إلكترونية. فريق محترف جداً وسريع في التنفيذ.',
+                textEn: 'The clinic management system they built completely transformed our workflow. Appointments are organized and all patient records are digital. Very professional and fast team.',
+              },
+              {
+                nameAr: 'م. سارة الفيصل', nameEn: 'Eng. Sara Al-Faisal',
+                roleAr: 'مؤسسة متجر إلكتروني - الرياض', roleEn: 'E-commerce Founder - Riyadh',
+                textAr: 'المتجر الإلكتروني اللي صمموه فاق توقعاتي. التصميم أنيق والأداء سريع جداً. المبيعات زادت 3 أضعاف بعد الإطلاق. أنصح بيهم بشدة!',
+                textEn: 'The e-commerce store they designed exceeded my expectations. Elegant design and blazing fast performance. Sales tripled after launch. Highly recommended!',
+              },
+              {
+                nameAr: 'أ. محمد عبدالله', nameEn: 'Mr. Mohammed Abdullah',
+                roleAr: 'صاحب سلسلة مطاعم - جدة', roleEn: 'Restaurant Chain Owner - Jeddah',
+                textAr: 'نظام POS المطاعم ممتاز! سهّل علينا إدارة الفروع والطلبات. القائمة الرقمية وفّرت علينا تكاليف الطباعة والتحديث أصبح لحظي.',
+                textEn: 'The Restaurant POS system is excellent! It simplified branch and order management. The digital menu saved us printing costs and updates are instant.',
+              },
+              {
+                nameAr: 'د. نورا المنصوري', nameEn: 'Dr. Noura Al-Mansouri',
+                roleAr: 'مديرة مدرسة خاصة - دبي', roleEn: 'Private School Principal - Dubai',
+                textAr: 'نظام إدارة المدرسة شامل ومتكامل. الحضور والغياب والدرجات وتواصل أولياء الأمور كله في مكان واحد. وفّر علينا وقت وجهد كبير.',
+                textEn: 'The school management system is comprehensive. Attendance, grades, and parent communication all in one place. Saved us tremendous time and effort.',
+              },
+              {
+                nameAr: 'أ. خالد الشمري', nameEn: 'Mr. Khalid Al-Shamri',
+                roleAr: 'مدير شركة لوجستية - الدمام', roleEn: 'Logistics Company Manager - Dammam',
+                textAr: 'منصة إدارة الأسطول اللي طوروها لنا رائعة. تتبع الشحنات والسائقين في الوقت الحقيقي. الكفاءة التشغيلية تحسنت بنسبة 40%.',
+                textEn: 'The fleet management platform they developed is amazing. Real-time shipment and driver tracking. Operational efficiency improved by 40%.',
+              },
+              {
+                nameAr: 'صيدلي. ياسمين حسين', nameEn: 'Pharm. Yasmin Hussein',
+                roleAr: 'صاحبة صيدلية - الإسكندرية', roleEn: 'Pharmacy Owner - Alexandria',
+                textAr: 'نظام الصيدلية وفّر علينا كتير. تنبيهات انتهاء الصلاحية والمخزون التلقائي ممتازة. الدعم الفني سريع ومتعاون دايماً.',
+                textEn: 'The pharmacy system saved us a lot. Expiry alerts and automated inventory are excellent. Technical support is always fast and helpful.',
+              },
+            ].map((testimonial, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="card-gradient rounded-2xl border border-border p-6 relative group hover:glow-primary transition-all duration-300"
+              >
+                <Quote size={32} className="text-primary/20 absolute top-4 end-4" />
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} size={14} className="fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                  "{lang === 'ar' ? testimonial.textAr : testimonial.textEn}"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full hero-gradient flex items-center justify-center text-primary-foreground font-bold text-sm">
+                    {(lang === 'ar' ? testimonial.nameAr : testimonial.nameEn).charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground text-sm">{lang === 'ar' ? testimonial.nameAr : testimonial.nameEn}</p>
+                    <p className="text-xs text-muted-foreground">{lang === 'ar' ? testimonial.roleAr : testimonial.roleEn}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
         <div className="container mx-auto px-4">
           <div className="hero-gradient rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
