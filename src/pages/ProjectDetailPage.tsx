@@ -39,8 +39,9 @@ const ProjectDetailPage = () => {
   }
 
   const category = categories[project.catIndex];
-  const liveUrl = project.url || `/demo/${project.id}`;
-  const isExternal = !!project.url;
+  const demoUrl = `/demo/${project.id}`;
+  const externalUrl = project.url;
+  const hasExternalUrl = !!project.url;
 
   const highlights = [
     { icon: Monitor, labelAr: 'تصميم عصري', labelEn: 'Modern Design' },
@@ -87,16 +88,14 @@ const ProjectDetailPage = () => {
               {lang === 'ar' ? project.descriptionAr : project.descriptionEn}
             </p>
             <div className="flex flex-wrap gap-3">
-              <a
-                href={liveUrl}
-                target={isExternal ? "_blank" : "_self"}
-                rel={isExternal ? "noopener noreferrer" : undefined}
+              <Link
+                to={demoUrl}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-opacity glow-primary"
               >
                 <Globe size={20} />
-                {lang === 'ar' ? 'معاينة الموقع مباشرة' : 'Visit Live Website'}
+                {lang === 'ar' ? 'معاينة الموقع مباشرة' : 'Preview Live Demo'}
                 <ExternalLink size={18} />
-              </a>
+              </Link>
               <a
                 href="https://wa.me/201227080430"
                 target="_blank"
@@ -122,7 +121,7 @@ const ProjectDetailPage = () => {
           </h2>
 
           {/* Active Screen */}
-          <div className="rounded-2xl overflow-hidden border border-border mb-4 relative group cursor-pointer" onClick={() => window.open(liveUrl, '_blank')}>
+          <div className="rounded-2xl overflow-hidden border border-border mb-4 relative group cursor-pointer" onClick={() => window.location.href = demoUrl}>
             <img
               src={mockupScreens[activeScreen].image}
               alt={lang === 'ar' ? mockupScreens[activeScreen].labelAr : mockupScreens[activeScreen].labelEn}
@@ -222,15 +221,13 @@ const ProjectDetailPage = () => {
                 <p className="text-primary-foreground/70 text-sm mb-4">
                   {lang === 'ar' ? 'اضغط لمعاينة الموقع والتجربة بنفسك' : 'Click to preview and experience it yourself'}
                 </p>
-                <a
-                  href={liveUrl}
-                  target={isExternal ? "_blank" : "_self"}
-                  rel={isExternal ? "noopener noreferrer" : undefined}
+                <Link
+                  to={demoUrl}
                   className="block w-full py-3 rounded-xl bg-background text-foreground font-semibold hover:bg-background/90 transition-colors text-center inline-flex items-center justify-center gap-2"
                 >
                   <ExternalLink size={16} />
-                  {lang === 'ar' ? 'افتح الموقع' : 'Open Website'}
-                </a>
+                  {lang === 'ar' ? 'معاينة المشروع' : 'Preview Demo'}
+                </Link>
               </div>
             </div>
 
