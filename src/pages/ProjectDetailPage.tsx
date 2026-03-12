@@ -39,8 +39,9 @@ const ProjectDetailPage = () => {
   }
 
   const category = categories[project.catIndex];
-  const liveUrl = project.url || `/demo/${project.id}`;
-  const isExternal = !!project.url;
+  const demoUrl = `/demo/${project.id}`;
+  const externalUrl = project.url;
+  const hasExternalUrl = !!project.url;
 
   const highlights = [
     { icon: Monitor, labelAr: 'تصميم عصري', labelEn: 'Modern Design' },
