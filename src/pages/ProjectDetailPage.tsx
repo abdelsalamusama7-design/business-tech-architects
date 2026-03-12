@@ -88,16 +88,14 @@ const ProjectDetailPage = () => {
               {lang === 'ar' ? project.descriptionAr : project.descriptionEn}
             </p>
             <div className="flex flex-wrap gap-3">
-              <a
-                href={liveUrl}
-                target={isExternal ? "_blank" : "_self"}
-                rel={isExternal ? "noopener noreferrer" : undefined}
+              <Link
+                to={demoUrl}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-opacity glow-primary"
               >
                 <Globe size={20} />
-                {lang === 'ar' ? 'معاينة الموقع مباشرة' : 'Visit Live Website'}
+                {lang === 'ar' ? 'معاينة الموقع مباشرة' : 'Preview Live Demo'}
                 <ExternalLink size={18} />
-              </a>
+              </Link>
               <a
                 href="https://wa.me/201227080430"
                 target="_blank"
