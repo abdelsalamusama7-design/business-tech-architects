@@ -221,15 +221,13 @@ const ProjectDetailPage = () => {
                 <p className="text-primary-foreground/70 text-sm mb-4">
                   {lang === 'ar' ? 'اضغط لمعاينة الموقع والتجربة بنفسك' : 'Click to preview and experience it yourself'}
                 </p>
-                <a
-                  href={liveUrl}
-                  target={isExternal ? "_blank" : "_self"}
-                  rel={isExternal ? "noopener noreferrer" : undefined}
+                <Link
+                  to={demoUrl}
                   className="block w-full py-3 rounded-xl bg-background text-foreground font-semibold hover:bg-background/90 transition-colors text-center inline-flex items-center justify-center gap-2"
                 >
                   <ExternalLink size={16} />
-                  {lang === 'ar' ? 'افتح الموقع' : 'Open Website'}
-                </a>
+                  {lang === 'ar' ? 'معاينة المشروع' : 'Preview Demo'}
+                </Link>
               </div>
             </div>
 
