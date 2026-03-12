@@ -121,7 +121,7 @@ const ProjectDetailPage = () => {
           </h2>
 
           {/* Active Screen */}
-          <div className="rounded-2xl overflow-hidden border border-border mb-4 relative group cursor-pointer" onClick={() => window.open(liveUrl, '_blank')}>
+          <div className="rounded-2xl overflow-hidden border border-border mb-4 relative group cursor-pointer" onClick={() => window.location.href = demoUrl}>
             <img
               src={mockupScreens[activeScreen].image}
               alt={lang === 'ar' ? mockupScreens[activeScreen].labelAr : mockupScreens[activeScreen].labelEn}
