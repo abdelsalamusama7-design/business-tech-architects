@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getProjectById, categories } from '@/data/portfolioData';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, MessageCircle, Search } from 'lucide-react';
+import { ArrowLeft, MessageCircle, Search, Filter, X } from 'lucide-react';
 import { categoryThemes, getSidebarItems, getStats, getQuickActions, getSectionContent } from '@/data/demoData';
 import { t } from '@/data/demoTranslations';
 
@@ -319,32 +319,150 @@ function ChartSection({ gradientClass, lang, title }: { gradientClass: string; l
   );
 }
 
-// Reusable table component for sections
+// Reusable table component with search & column filter
 function SectionTable({ section, gradientClass, lang }: { section: { headers: string[]; rows: string[][] }; gradientClass: string; lang: string }) {
+  const [search, setSearch] = useState('');
+  const [filterCol, setFilterCol] = useState<number | null>(null);
+  const [filterValue, setFilterValue] = useState('');
+
+  const filteredRows = useMemo(() => {
+    let rows = section.rows;
+    if (search) {
+      const q = search.toLowerCase();
+      rows = rows.filter(row => row.some(cell => cell.toLowerCase().includes(q)));
+    }
+    if (filterCol !== null && filterValue) {
+      rows = rows.filter(row => row[filterCol]?.toLowerCase().includes(filterValue.toLowerCase()));
+    }
+    return rows;
+  }, [section.rows, search, filterCol, filterValue]);
+
+  // Get unique values for selected filter column
+  const filterOptions = useMemo(() => {
+    if (filterCol === null) return [];
+    const vals = [...new Set(section.rows.map(r => r[filterCol]))];
+    return vals.sort();
+  }, [section.rows, filterCol]);
+
   if (!section.headers.length) return null;
+
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+      {/* Search & Filter Bar */}
+      <div className="p-3 border-b border-slate-800 flex flex-wrap gap-2 items-center">
+        {/* Search */}
+        <div className="flex items-center gap-1.5 bg-slate-800 rounded-lg px-3 py-1.5 flex-1 min-w-[160px] max-w-xs">
+          <Search size={14} className="text-slate-400 shrink-0" />
+          <input
+            type="text"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder={lang === 'ar' ? 'بحث في الجدول...' : 'Search table...'}
+            className="bg-transparent text-xs text-white placeholder:text-slate-500 outline-none w-full"
+          />
+          {search && (
+            <button onClick={() => setSearch('')} className="text-slate-500 hover:text-slate-300">
+              <X size={12} />
+            </button>
+          )}
+        </div>
+
+        {/* Column Filter Dropdown */}
+        <div className="flex items-center gap-1.5">
+          <Filter size={14} className="text-slate-400" />
+          <select
+            value={filterCol ?? ''}
+            onChange={e => { setFilterCol(e.target.value === '' ? null : Number(e.target.value)); setFilterValue(''); }}
+            className="bg-slate-800 text-xs text-slate-300 rounded-lg px-2 py-1.5 outline-none border-none cursor-pointer"
+          >
+            <option value="">{lang === 'ar' ? 'فلترة حسب...' : 'Filter by...'}</option>
+            {section.headers.map((h, i) => (
+              <option key={i} value={i}>{t(h, lang)}</option>
+            ))}
+          </select>
+
+          {filterCol !== null && (
+            <select
+              value={filterValue}
+              onChange={e => setFilterValue(e.target.value)}
+              className="bg-slate-800 text-xs text-slate-300 rounded-lg px-2 py-1.5 outline-none border-none cursor-pointer max-w-[160px]"
+            >
+              <option value="">{lang === 'ar' ? 'الكل' : 'All'}</option>
+              {filterOptions.map((v, i) => (
+                <option key={i} value={v}>{v}</option>
+              ))}
+            </select>
+          )}
+
+          {(search || filterValue) && (
+            <button
+              onClick={() => { setSearch(''); setFilterCol(null); setFilterValue(''); }}
+              className="text-xs text-slate-400 hover:text-white px-2 py-1 rounded-lg bg-slate-800"
+            >
+              {lang === 'ar' ? 'مسح' : 'Clear'}
+            </button>
+          )}
+        </div>
+
+        {/* Results count */}
+        <span className="text-[10px] text-slate-500 ms-auto">
+          {filteredRows.length}/{section.rows.length} {lang === 'ar' ? 'نتيجة' : 'results'}
+        </span>
+      </div>
+
+      {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full text-xs">
           <thead>
             <tr className="border-b border-slate-800">
               {section.headers.map((h, i) => (
-                <th key={i} className="text-start p-3 text-slate-400 font-medium">{t(h, lang)}</th>
+                <th
+                  key={i}
+                  className={`text-start p-3 text-slate-400 font-medium cursor-pointer hover:text-slate-200 transition-colors ${filterCol === i ? 'text-white' : ''}`}
+                  onClick={() => { setFilterCol(filterCol === i ? null : i); setFilterValue(''); }}
+                >
+                  {t(h, lang)}
+                  {filterCol === i && <Filter size={10} className="inline ms-1" />}
+                </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {section.rows.map((row, i) => (
-              <tr key={i} className="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors cursor-default">
-                {row.map((cell, j) => (
-                  <td key={j} className="p-3 text-slate-300">{cell}</td>
-                ))}
+            {filteredRows.length > 0 ? (
+              filteredRows.map((row, i) => (
+                <tr key={i} className="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors cursor-default">
+                  {row.map((cell, j) => (
+                    <td key={j} className="p-3 text-slate-300">
+                      {search ? highlightMatch(cell, search) : cell}
+                    </td>
+                  ))}
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={section.headers.length} className="p-6 text-center text-slate-500">
+                  {lang === 'ar' ? 'لا توجد نتائج مطابقة' : 'No matching results'}
+                </td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>
     </div>
+  );
+}
+
+// Highlight search matches in cell text
+function highlightMatch(text: string, query: string) {
+  if (!query) return text;
+  const idx = text.toLowerCase().indexOf(query.toLowerCase());
+  if (idx === -1) return text;
+  return (
+    <>
+      {text.slice(0, idx)}
+      <span className="bg-yellow-500/30 text-yellow-300 rounded px-0.5">{text.slice(idx, idx + query.length)}</span>
+      {text.slice(idx + query.length)}
+    </>
   );
 }
 
