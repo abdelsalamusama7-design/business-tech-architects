@@ -424,12 +424,12 @@ const HomePage = () => {
                 viewport={{ once: true }}
               >
                 <Sparkles size={32} className="text-primary-foreground/60 mx-auto mb-4" />
-                <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4">{t('consultation.title')}</h2>
-                <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">{t('consultation.subtitle')}</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-3 sm:mb-4">{t('consultation.title')}</h2>
+                <p className="text-primary-foreground/80 text-sm sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">{t('consultation.subtitle')}</p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                   <Link
                     to="/consultation"
-                    className="group relative px-8 py-4 rounded-xl bg-background text-foreground font-semibold hover:bg-background/90 transition-all inline-flex items-center justify-center gap-2 overflow-hidden"
+                    className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-background text-foreground font-semibold text-sm sm:text-base hover:bg-background/90 transition-all inline-flex items-center justify-center gap-2 overflow-hidden"
                   >
                     <span className="absolute inset-0 bg-primary/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
                     <span className="relative">{t('hero.cta1')}</span> <Arrow size={20} className="relative" />
