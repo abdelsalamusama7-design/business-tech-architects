@@ -438,7 +438,7 @@ const HomePage = () => {
                     href="https://wa.me/201227080430"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-8 py-4 rounded-xl border-2 border-primary-foreground/30 text-primary-foreground font-semibold hover:bg-primary-foreground/10 transition-colors inline-flex items-center justify-center gap-2"
+                    className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-primary-foreground/30 text-primary-foreground font-semibold text-sm sm:text-base hover:bg-primary-foreground/10 transition-colors inline-flex items-center justify-center gap-2"
                   >
                     <MessageCircle size={20} /> {t('hero.cta2')}
                   </a>
