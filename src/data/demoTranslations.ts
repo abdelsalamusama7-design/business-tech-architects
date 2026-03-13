@@ -431,7 +431,6 @@ export const ar: Record<string, string> = {
   'Success Rate': 'معدل النجاح',
   "Today's Tests": 'اختبارات اليوم',
   'Avg Turnaround': 'متوسط وقت النتيجة',
-  'Dispensed Today': 'صُرف اليوم',
   'Total Drivers': 'إجمالي السائقين',
   'Online': 'متصل',
   'Active Deliveries': 'توصيلات نشطة',
