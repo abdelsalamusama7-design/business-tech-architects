@@ -272,20 +272,20 @@ const HomePage = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tech-grid opacity-50" />
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-8 sm:mb-14"
           >
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 mb-4">
               {lang === 'ar' ? 'حلول متكاملة' : 'Full Solutions'}
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">{t('services.title')}</h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">{t('services.subtitle')}</p>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">{t('services.title')}</h2>
+            <p className="text-muted-foreground text-sm sm:text-lg max-w-xl mx-auto">{t('services.subtitle')}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
