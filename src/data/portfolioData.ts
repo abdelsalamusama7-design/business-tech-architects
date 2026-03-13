@@ -348,7 +348,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A complete gym management system for memberships, trainers, and facility management.',
     featuresAr: ['إدارة الاشتراكات', 'جدول المدربين', 'تتبع اللياقة', 'نظام الدفع', 'تطبيق الأعضاء'],
     featuresEn: ['Membership Management', 'Trainer Schedule', 'Fitness Tracking', 'Payment System', 'Member App'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Stripe'],
   },
   {
     id: 'hotel-stay-booking',
