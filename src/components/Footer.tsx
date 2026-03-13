@@ -50,6 +50,9 @@ const Footer = () => {
               <a href="https://wa.me/201227080430" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                 <MessageCircle size={16} /> {t('contact.whatsapp')}
               </a>
+              <a href="https://www.facebook.com/share/1CUnRRiTGN/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Facebook size={16} /> Facebook
+              </a>
             </div>
           </div>
         </div>
