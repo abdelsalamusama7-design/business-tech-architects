@@ -71,7 +71,7 @@ const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
           >
             <img
               src={splashLogo}
-              alt="Instatech Labs"
+              alt="Insta-Tech Labs"
               className="w-44 h-44 md:w-56 md:h-56 rounded-full object-cover shadow-2xl"
               style={{ boxShadow: '0 0 60px hsl(172, 66%, 30%, 0.4), 0 0 120px hsl(199, 89%, 48%, 0.2)' }}
             />
@@ -89,7 +89,7 @@ const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
               WebkitTextFillColor: 'transparent',
             }}
           >
-            Instatech Labs
+            Insta-Tech Labs
           </motion.h1>
 
           {/* Tagline */}

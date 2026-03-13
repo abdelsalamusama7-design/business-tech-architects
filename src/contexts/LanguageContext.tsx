@@ -24,7 +24,7 @@ const translations: Record<string, Record<Language, string>> = {
 
   // Hero
   'hero.headline': { ar: 'تصميم أنظمة رقمية ذكية لأعمالك', en: 'Build Smart Digital Systems For Your Business' },
-  'hero.subheadline': { ar: 'Instatech Labs تطور مواقع إلكترونية قوية وتطبيقات موبايل وأنظمة برمجية مخصصة تساعد الشركات على أتمتة العمليات والنمو بشكل أسرع.', en: 'Instatech Labs develops powerful websites, mobile apps, and custom software systems that help companies automate operations and grow faster.' },
+  'hero.subheadline': { ar: 'Insta-Tech Labs تطور مواقع إلكترونية قوية وتطبيقات موبايل وأنظمة برمجية مخصصة تساعد الشركات على أتمتة العمليات والنمو بشكل أسرع.', en: 'Insta-Tech Labs develops powerful websites, mobile apps, and custom software systems that help companies automate operations and grow faster.' },
   'hero.cta1': { ar: 'ابدأ مشروعك', en: 'Start Your Project' },
   'hero.cta2': { ar: 'تواصل عبر واتساب', en: 'Contact on WhatsApp' },
 
@@ -98,14 +98,14 @@ const translations: Record<string, Record<Language, string>> = {
   'contact.whatsapp': { ar: 'واتساب', en: 'WhatsApp' },
 
   // Footer
-  'footer.description': { ar: 'Instatech Labs - شريكك التقني لبناء أنظمة رقمية ذكية.', en: 'Instatech Labs - Your tech partner for building smart digital systems.' },
+  'footer.description': { ar: 'Insta-Tech Labs - شريكك التقني لبناء أنظمة رقمية ذكية.', en: 'Insta-Tech Labs - Your tech partner for building smart digital systems.' },
   'footer.rights': { ar: 'جميع الحقوق محفوظة', en: 'All rights reserved' },
   'footer.quickLinks': { ar: 'روابط سريعة', en: 'Quick Links' },
   'footer.contactInfo': { ar: 'معلومات التواصل', en: 'Contact Info' },
 
   // AI Chatbot
   'ai.title': { ar: 'مساعد المبيعات الذكي', en: 'Smart Sales Assistant' },
-  'ai.welcome': { ar: 'مرحباً! أنا مساعد Instatech Labs الذكي. كيف يمكنني مساعدتك؟', en: 'Hello! I am Instatech Labs smart assistant. How can I help you?' },
+  'ai.welcome': { ar: 'مرحباً! أنا مساعد Insta-Tech Labs الذكي. كيف يمكنني مساعدتك؟', en: 'Hello! I am Insta-Tech Labs smart assistant. How can I help you?' },
   'ai.placeholder': { ar: 'اكتب رسالتك...', en: 'Type your message...' },
   'ai.send': { ar: 'إرسال', en: 'Send' },
 

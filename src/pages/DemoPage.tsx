@@ -54,8 +54,8 @@ const DemoPage = () => {
           </Link>
           <span className="hidden sm:inline">
             {lang === 'ar'
-              ? `عرض توضيحي: "${project.titleAr}" — Instatech Labs`
-              : `Demo: "${project.title}" — Instatech Labs`}
+              ? `عرض توضيحي: "${project.titleAr}" — Insta-Tech Labs`
+              : `Demo: "${project.title}" — Insta-Tech Labs`}
           </span>
           <a href="tel:01227080430" className="hover:opacity-80 transition-opacity">📞 01227080430</a>
         </div>
@@ -265,7 +265,7 @@ const DemoPage = () => {
             {lang === 'ar' ? 'هل تريد نظام مشابه لعملك؟' : 'Want a similar system for your business?'}
           </p>
           <p className="text-white/80 text-sm mb-5">
-            {lang === 'ar' ? 'تنفيذ وتصميم Instatech Labs | للتواصل: 01227080430 / 01554400044' : 'Designed & Developed by Instatech Labs | Contact: 01227080430 / 01554400044'}
+            {lang === 'ar' ? 'تنفيذ وتصميم Insta-Tech Labs | للتواصل: 01227080430 / 01554400044' : 'Designed & Developed by Insta-Tech Labs | Contact: 01227080430 / 01554400044'}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link

@@ -29,8 +29,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <img src={instaTechLogo} alt="Instatech Labs" className="w-9 h-9 rounded-lg object-cover" />
-            <span className="font-bold text-lg text-foreground">Instatech Labs</span>
+            <img src={instaTechLogo} alt="Insta-Tech Labs" className="w-9 h-9 rounded-lg object-cover" />
+            <span className="font-bold text-lg text-foreground">Insta-Tech Labs</span>
           </Link>
 
           {/* Desktop Nav */}

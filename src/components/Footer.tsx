@@ -20,8 +20,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={instaTechLogo} alt="Instatech Labs" className="w-10 h-10 rounded-lg object-cover shadow-md" />
-              <span className="font-bold text-lg text-foreground">Instatech Labs</span>
+              <img src={instaTechLogo} alt="Insta-Tech Labs" className="w-10 h-10 rounded-lg object-cover shadow-md" />
+              <span className="font-bold text-lg text-foreground">Insta-Tech Labs</span>
             </div>
             <p className="text-muted-foreground text-sm">{t('footer.description')}</p>
           </div>
@@ -58,13 +58,13 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center space-y-2">
           <p className="text-sm font-semibold text-foreground">
-            {lang === 'ar' ? 'تنفيذ وتصميم' : 'Designed & Developed by'} Instatech Labs
+            {lang === 'ar' ? 'تنفيذ وتصميم' : 'Designed & Developed by'} Insta-Tech Labs
           </p>
           <p className="text-sm text-muted-foreground" dir="ltr">
             للتواصل: 01227080430 / 01554400044
           </p>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Instatech Labs. {t('footer.rights')}.
+            © {new Date().getFullYear()} Insta-Tech Labs. {t('footer.rights')}.
           </p>
         </div>
       </div>

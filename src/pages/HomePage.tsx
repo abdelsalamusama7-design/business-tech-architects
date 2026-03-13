@@ -53,7 +53,7 @@ const HomePage = () => {
                 <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl scale-150" />
                 <img
                   src={instaTechLogo}
-                  alt="Instatech Labs"
+                  alt="Insta-Tech Labs"
                   className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
                 />
               </div>
@@ -332,7 +332,7 @@ const HomePage = () => {
       <section className="py-20 bg-card/50 border-t border-border">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-foreground text-center mb-12">
-            {lang === 'ar' ? 'لماذا Instatech Labs؟' : 'Why Instatech Labs?'}
+            {lang === 'ar' ? 'لماذا Insta-Tech Labs؟' : 'Why Insta-Tech Labs?'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
