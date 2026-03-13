@@ -462,7 +462,7 @@ const HomePage = () => {
               {lang === 'ar' ? 'لماذا Insta-Tech Labs؟' : 'Why Insta-Tech Labs?'}
             </h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {[
               { icon: Cpu, ar: 'فريق متخصص', en: 'Expert Team' },
               { icon: Clock, ar: 'تسليم في الوقت المحدد', en: 'On-Time Delivery' },
