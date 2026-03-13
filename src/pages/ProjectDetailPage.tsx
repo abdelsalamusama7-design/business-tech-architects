@@ -11,7 +11,7 @@ const ProjectDetailPage = () => {
   const { lang } = useLanguage();
   const project = getProjectById(id || '');
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [id]);
   
