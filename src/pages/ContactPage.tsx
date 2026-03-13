@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, Mail, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, Send, CheckCircle2, Facebook } from 'lucide-react';
 
 const ContactPage = () => {
   const { t, lang } = useLanguage();
@@ -22,6 +22,7 @@ const ContactPage = () => {
               { icon: Phone, label: '01227080430', href: 'tel:01227080430', title: t('contact.call') },
               { icon: Phone, label: '01554400044', href: 'tel:01554400044', title: t('contact.call') },
               { icon: MessageCircle, label: t('contact.whatsapp'), href: 'https://wa.me/201227080430', title: 'WhatsApp' },
+              { icon: Facebook, label: 'Instatech Labs', href: 'https://www.facebook.com/share/1CUnRRiTGN/', title: 'Facebook' },
             ].map((item, i) => {
               const Icon = item.icon;
               return (
