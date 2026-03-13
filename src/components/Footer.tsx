@@ -20,8 +20,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={instaTechLogo} alt="Instatech Labs" className="w-10 h-10 rounded-lg object-cover shadow-md" />
-              <span className="font-bold text-lg text-foreground">Instatech Labs</span>
+              <img src={instaTechLogo} alt="Insta-Tech Labs" className="w-10 h-10 rounded-lg object-cover shadow-md" />
+              <span className="font-bold text-lg text-foreground">Insta-Tech Labs</span>
             </div>
             <p className="text-muted-foreground text-sm">{t('footer.description')}</p>
           </div>
