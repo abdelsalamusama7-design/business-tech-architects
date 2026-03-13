@@ -296,7 +296,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive real estate platform for listing, selling, and renting properties with interactive maps.',
     featuresAr: ['خرائط تفاعلية', 'بحث متقدم', 'جولات افتراضية', 'مقارنة العقارات', 'تواصل مباشر'],
     featuresEn: ['Interactive Maps', 'Advanced Search', 'Virtual Tours', 'Property Comparison', 'Direct Contact'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox', 'Node.js', 'PostgreSQL', 'Cloudinary'],
   },
   {
     id: 'booking-ease-system',
