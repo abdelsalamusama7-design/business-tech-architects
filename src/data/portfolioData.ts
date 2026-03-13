@@ -270,7 +270,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive hospital management platform covering departments, doctors, patients, and operations.',
     featuresAr: ['إدارة الأقسام', 'ملفات المرضى', 'جدولة الأطباء', 'إدارة الأسرّة', 'الصيدلية الداخلية'],
     featuresEn: ['Department Management', 'Patient Records', 'Doctor Scheduling', 'Bed Management', 'In-house Pharmacy'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts', 'Node.js', 'PostgreSQL', 'Docker', 'Redis'],
   },
   {
     id: 'quick-deliver-app',
