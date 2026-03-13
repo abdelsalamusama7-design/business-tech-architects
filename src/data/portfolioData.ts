@@ -322,7 +322,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An advanced CRM system for tracking customers, sales, and managing business opportunities.',
     featuresAr: ['إدارة العملاء', 'تتبع المبيعات', 'Pipeline المبيعات', 'تقارير الأداء', 'أتمتة التسويق'],
     featuresEn: ['Customer Management', 'Sales Tracking', 'Sales Pipeline', 'Performance Reports', 'Marketing Automation'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts', 'Node.js', 'PostgreSQL', 'SendGrid'],
   },
   {
     id: 'logistics-fleet-pro',
