@@ -75,11 +75,11 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden tech-grid scan-line">
+      <section className="relative pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24 overflow-hidden tech-grid scan-line">
         {/* Ambient orbs */}
-        <div className="absolute top-10 end-[10%] w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px] animate-pulse-glow" />
-        <div className="absolute bottom-0 start-[5%] w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[hsl(250,70%,55%)]/5 blur-[80px]" />
+        <div className="absolute top-10 end-[10%] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] rounded-full bg-primary/8 blur-[80px] md:blur-[100px] animate-pulse-glow" />
+        <div className="absolute bottom-0 start-[5%] w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full bg-accent/8 blur-[100px] md:blur-[120px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] rounded-full bg-[hsl(250,70%,55%)]/5 blur-[60px] md:blur-[80px]" />
 
         {/* Floating particles */}
         <FloatingParticle delay={0} x="10%" y="20%" size={6} />
