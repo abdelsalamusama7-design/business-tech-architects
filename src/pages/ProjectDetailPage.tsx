@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
@@ -9,6 +10,10 @@ const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const { lang } = useLanguage();
   const project = getProjectById(id || '');
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [id]);
   
 
   if (!project) {
