@@ -252,11 +252,11 @@ const HomePage = () => {
                       </div>
                     )}
                   </div>
-                  <div className="p-4">
-                    <p className="text-xs text-primary/70 font-medium mb-1">
+                  <div className="p-2.5 sm:p-4">
+                    <p className="text-[10px] sm:text-xs text-primary/70 font-medium mb-0.5 sm:mb-1 truncate">
                       {lang === 'ar' ? categories[project.catIndex]?.ar : categories[project.catIndex]?.en}
                     </p>
-                    <h3 className="font-semibold text-foreground text-sm">{lang === 'ar' ? project.titleAr : project.title}</h3>
+                    <h3 className="font-semibold text-foreground text-xs sm:text-sm line-clamp-1">{lang === 'ar' ? project.titleAr : project.title}</h3>
                   </div>
                 </Link>
               </motion.div>
