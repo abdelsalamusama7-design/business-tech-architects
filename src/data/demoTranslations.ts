@@ -378,7 +378,6 @@ export const ar: Record<string, string> = {
   'Tasks Done': 'المهام المنجزة',
 
   // Section stats
-  'Total': 'الإجمالي',
   'Active': 'نشط',
   'New This Month': 'جديد هذا الشهر',
   'Today': 'اليوم',
