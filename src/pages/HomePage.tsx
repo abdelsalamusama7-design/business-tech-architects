@@ -288,7 +288,7 @@ const HomePage = () => {
             <p className="text-muted-foreground text-sm sm:text-lg max-w-xl mx-auto">{t('services.subtitle')}</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {services.map((service, i) => {
               const Icon = service.icon;
               return (
