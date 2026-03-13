@@ -153,7 +153,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A complete educational and training platform with interactive courses and student progress tracking.',
     featuresAr: ['دورات تفاعلية', 'تتبع التقدم', 'شهادات إتمام', 'منتدى نقاش'],
     featuresEn: ['Interactive Courses', 'Progress Tracking', 'Completion Certificates', 'Discussion Forum'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Node.js', 'PostgreSQL', 'WebSocket'],
   },
   {
     id: 'clinic-care-portal',
