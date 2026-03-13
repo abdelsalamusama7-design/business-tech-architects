@@ -140,7 +140,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive accounting and financial management platform with advanced analytical reports and interactive dashboards.',
     featuresAr: ['لوحة بيانات تفاعلية', 'تقارير مالية', 'إدارة الفواتير', 'تتبع المصروفات'],
     featuresEn: ['Interactive Dashboard', 'Financial Reports', 'Invoice Management', 'Expense Tracking'],
-    techStack: ['React', 'TypeScript', 'Recharts', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'Recharts', 'Supabase', 'PostgreSQL', 'Node.js', 'Docker'],
   },
   {
     id: 'teach-sparkle-flow',
