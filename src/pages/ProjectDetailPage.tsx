@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2, Code2, Globe, Monitor, Smartphone, Layout, Shield, Zap, Users, MessageCircle, Tablet } from 'lucide-react';
 import { getProjectById, categories, allProjects } from '@/data/portfolioData';
-import { useState } from 'react';
+
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
