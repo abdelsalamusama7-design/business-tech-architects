@@ -101,7 +101,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A complete e-commerce store for accessories and jewelry with a smooth shopping experience and elegant design.',
     featuresAr: ['كتالوج منتجات متقدم', 'سلة تسوق ذكية', 'بوابة دفع آمنة', 'تصميم متجاوب', 'نظام تصفية وبحث'],
     featuresEn: ['Advanced Product Catalog', 'Smart Shopping Cart', 'Secure Payment Gateway', 'Responsive Design', 'Search & Filter System'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Node.js', 'PostgreSQL', 'Stripe API'],
   },
   {
     id: 'glam-gala-boutique',
