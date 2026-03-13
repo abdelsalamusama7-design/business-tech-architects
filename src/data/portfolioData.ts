@@ -101,7 +101,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A complete e-commerce store for accessories and jewelry with a smooth shopping experience and elegant design.',
     featuresAr: ['كتالوج منتجات متقدم', 'سلة تسوق ذكية', 'بوابة دفع آمنة', 'تصميم متجاوب', 'نظام تصفية وبحث'],
     featuresEn: ['Advanced Product Catalog', 'Smart Shopping Cart', 'Secure Payment Gateway', 'Responsive Design', 'Search & Filter System'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Node.js', 'PostgreSQL', 'Stripe API'],
   },
   {
     id: 'glam-gala-boutique',
@@ -114,7 +114,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A luxury online fashion boutique showcasing the latest evening dresses and high-end clothing.',
     featuresAr: ['عرض أزياء تفاعلي', 'نظام مقاسات ذكي', 'قائمة المفضلة', 'مشاركة على السوشيال ميديا'],
     featuresEn: ['Interactive Fashion Display', 'Smart Size System', 'Wishlist', 'Social Media Sharing'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'REST API', 'Cloudinary'],
   },
   {
     id: 'blush-boot-bliss',
@@ -127,7 +127,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A trendy shoe store providing an enjoyable shopping experience with a wide collection of boots and footwear.',
     featuresAr: ['تصفح حسب الفئة', 'عرض 360 درجة', 'مراجعات العملاء', 'شحن سريع'],
     featuresEn: ['Browse by Category', '360° View', 'Customer Reviews', 'Fast Shipping'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB'],
   },
   {
     id: 'fin-feeder-platform',
@@ -140,7 +140,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive accounting and financial management platform with advanced analytical reports and interactive dashboards.',
     featuresAr: ['لوحة بيانات تفاعلية', 'تقارير مالية', 'إدارة الفواتير', 'تتبع المصروفات'],
     featuresEn: ['Interactive Dashboard', 'Financial Reports', 'Invoice Management', 'Expense Tracking'],
-    techStack: ['React', 'TypeScript', 'Recharts', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'Recharts', 'Supabase', 'PostgreSQL', 'Node.js', 'Docker'],
   },
   {
     id: 'teach-sparkle-flow',
@@ -153,7 +153,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A complete educational and training platform with interactive courses and student progress tracking.',
     featuresAr: ['دورات تفاعلية', 'تتبع التقدم', 'شهادات إتمام', 'منتدى نقاش'],
     featuresEn: ['Interactive Courses', 'Progress Tracking', 'Completion Certificates', 'Discussion Forum'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Node.js', 'PostgreSQL', 'WebSocket'],
   },
   {
     id: 'clinic-care-portal',
@@ -166,7 +166,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A complete clinic management system with appointment scheduling and electronic patient records.',
     featuresAr: ['جدولة مواعيد ذكية', 'ملفات المرضى الإلكترونية', 'الفوترة والمدفوعات', 'تقارير طبية', 'إشعارات SMS'],
     featuresEn: ['Smart Scheduling', 'Electronic Patient Records', 'Billing & Payments', 'Medical Reports', 'SMS Notifications'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Node.js', 'PostgreSQL', 'Twilio'],
   },
   {
     id: 'pharma-hub-system',
@@ -179,7 +179,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive pharmacy platform for managing inventory, prescriptions, and sales efficiently.',
     featuresAr: ['إدارة المخزون', 'تتبع الوصفات', 'تنبيهات انتهاء الصلاحية', 'نقطة بيع متكاملة', 'تقارير المبيعات'],
     featuresEn: ['Inventory Management', 'Prescription Tracking', 'Expiry Alerts', 'Integrated POS', 'Sales Reports'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts', 'Node.js', 'PostgreSQL', 'Docker'],
   },
   {
     id: 'resto-order-pos',
@@ -192,7 +192,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An advanced POS system for restaurants and cafes with order and table management.',
     featuresAr: ['إدارة الطاولات', 'قائمة طعام رقمية', 'طباعة الفواتير', 'تتبع الطلبات', 'تقارير يومية'],
     featuresEn: ['Table Management', 'Digital Menu', 'Receipt Printing', 'Order Tracking', 'Daily Reports'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Node.js', 'PostgreSQL', 'Socket.io'],
   },
   {
     id: 'smart-menu-digital',
@@ -205,7 +205,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An interactive digital food menu with QR Code and real-time item and price updates.',
     featuresAr: ['QR Code للطاولات', 'تحديث لحظي', 'صور عالية الجودة', 'تصنيف الأصناف', 'دعم متعدد اللغات'],
     featuresEn: ['Table QR Codes', 'Real-time Updates', 'HD Images', 'Item Categories', 'Multi-language Support'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Firebase', 'QR Code API'],
   },
   {
     id: 'ai-biz-assistant',
@@ -218,7 +218,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An AI assistant for analyzing business data and providing performance improvement recommendations.',
     featuresAr: ['تحليل البيانات بالذكاء الاصطناعي', 'توصيات ذكية', 'تقارير تلقائية', 'تكامل مع CRM', 'دردشة تفاعلية'],
     featuresEn: ['AI Data Analysis', 'Smart Recommendations', 'Auto Reports', 'CRM Integration', 'Interactive Chat'],
-    techStack: ['React', 'TypeScript', 'OpenAI', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'OpenAI', 'Supabase', 'Python', 'FastAPI', 'LangChain', 'Docker'],
   },
   {
     id: 'school-master-pro',
@@ -231,7 +231,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive school management system including student affairs, attendance, grades, and reports.',
     featuresAr: ['إدارة الطلاب', 'نظام الحضور والغياب', 'إدارة الدرجات', 'تواصل أولياء الأمور', 'جدول الحصص'],
     featuresEn: ['Student Management', 'Attendance System', 'Grade Management', 'Parent Communication', 'Class Schedule'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Redis'],
   },
   {
     id: 'hr-flow-system',
@@ -244,7 +244,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An integrated HR system for managing employees, payroll, leaves, and evaluations.',
     featuresAr: ['إدارة الموظفين', 'مسير الرواتب', 'نظام الإجازات', 'تقييم الأداء', 'الهيكل التنظيمي'],
     featuresEn: ['Employee Management', 'Payroll', 'Leave System', 'Performance Reviews', 'Org Chart'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts', 'Node.js', 'PostgreSQL', 'Docker'],
   },
   {
     id: 'stock-warehouse-mgmt',
@@ -257,7 +257,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An advanced inventory and warehouse management system with product tracking and smart alerts.',
     featuresAr: ['تتبع المخزون', 'تنبيهات النقص', 'باركود سكانر', 'تقارير المخزون', 'إدارة الموردين'],
     featuresEn: ['Inventory Tracking', 'Low Stock Alerts', 'Barcode Scanner', 'Stock Reports', 'Supplier Management'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Barcode API'],
   },
   {
     id: 'hospital-care-platform',
@@ -270,7 +270,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive hospital management platform covering departments, doctors, patients, and operations.',
     featuresAr: ['إدارة الأقسام', 'ملفات المرضى', 'جدولة الأطباء', 'إدارة الأسرّة', 'الصيدلية الداخلية'],
     featuresEn: ['Department Management', 'Patient Records', 'Doctor Scheduling', 'Bed Management', 'In-house Pharmacy'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts', 'Node.js', 'PostgreSQL', 'Docker', 'Redis'],
   },
   {
     id: 'quick-deliver-app',
@@ -283,7 +283,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A complete delivery platform with real-time order and driver tracking.',
     featuresAr: ['تتبع لحظي', 'إدارة السائقين', 'إشعارات فورية', 'تقييم الخدمة', 'تقارير الأداء'],
     featuresEn: ['Real-time Tracking', 'Driver Management', 'Instant Notifications', 'Service Rating', 'Performance Reports'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox', 'Node.js', 'PostgreSQL', 'Socket.io', 'Firebase'],
   },
   {
     id: 'realty-finder-hub',
@@ -296,7 +296,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive real estate platform for listing, selling, and renting properties with interactive maps.',
     featuresAr: ['خرائط تفاعلية', 'بحث متقدم', 'جولات افتراضية', 'مقارنة العقارات', 'تواصل مباشر'],
     featuresEn: ['Interactive Maps', 'Advanced Search', 'Virtual Tours', 'Property Comparison', 'Direct Contact'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox', 'Node.js', 'PostgreSQL', 'Cloudinary'],
   },
   {
     id: 'booking-ease-system',
@@ -309,7 +309,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A flexible booking system suitable for clinics, salons, and restaurants with auto-confirmation.',
     featuresAr: ['حجز أونلاين', 'تأكيد تلقائي', 'تذكيرات SMS', 'إدارة المواعيد', 'تقويم تفاعلي'],
     featuresEn: ['Online Booking', 'Auto Confirmation', 'SMS Reminders', 'Appointment Management', 'Interactive Calendar'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Twilio'],
   },
   {
     id: 'crm-sales-tracker',
@@ -322,7 +322,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An advanced CRM system for tracking customers, sales, and managing business opportunities.',
     featuresAr: ['إدارة العملاء', 'تتبع المبيعات', 'Pipeline المبيعات', 'تقارير الأداء', 'أتمتة التسويق'],
     featuresEn: ['Customer Management', 'Sales Tracking', 'Sales Pipeline', 'Performance Reports', 'Marketing Automation'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts', 'Node.js', 'PostgreSQL', 'SendGrid'],
   },
   {
     id: 'logistics-fleet-pro',
@@ -335,7 +335,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive logistics platform for fleet management, shipments, and delivery tracking.',
     featuresAr: ['إدارة الأسطول', 'تتبع الشحنات', 'تخطيط المسارات', 'إدارة السائقين', 'تقارير التوصيل'],
     featuresEn: ['Fleet Management', 'Shipment Tracking', 'Route Planning', 'Driver Management', 'Delivery Reports'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox', 'Node.js', 'PostgreSQL', 'Docker', 'Redis'],
   },
   {
     id: 'gym-fit-manager',
@@ -348,7 +348,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A complete gym management system for memberships, trainers, and facility management.',
     featuresAr: ['إدارة الاشتراكات', 'جدول المدربين', 'تتبع اللياقة', 'نظام الدفع', 'تطبيق الأعضاء'],
     featuresEn: ['Membership Management', 'Trainer Schedule', 'Fitness Tracking', 'Payment System', 'Member App'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Stripe'],
   },
   {
     id: 'hotel-stay-booking',
@@ -361,7 +361,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A professional hotel booking platform with price comparison and guest reviews.',
     featuresAr: ['بحث وحجز فوري', 'مقارنة الأسعار', 'تقييمات النزلاء', 'صور بانورامية', 'دفع آمن'],
     featuresEn: ['Instant Search & Book', 'Price Comparison', 'Guest Reviews', 'Panoramic Photos', 'Secure Payment'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Stripe'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Stripe', 'Node.js', 'PostgreSQL', 'Cloudinary'],
   },
   {
     id: 'event-hub-platform',
@@ -374,7 +374,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive platform for organizing and managing events and conferences with an integrated ticketing system.',
     featuresAr: ['إدارة الفعاليات', 'نظام التذاكر', 'تسجيل الحضور', 'بث مباشر', 'تقارير الفعالية'],
     featuresEn: ['Event Management', 'Ticketing System', 'Attendance Check-in', 'Live Streaming', 'Event Reports'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'WebSocket', 'Stripe'],
   },
   {
     id: 'retail-smart-pos',
@@ -387,7 +387,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An advanced retail POS system with inventory management and reporting.',
     featuresAr: ['نقطة بيع سريعة', 'إدارة المخزون', 'باركود سكانر', 'تقارير المبيعات', 'إدارة الموظفين'],
     featuresEn: ['Fast POS', 'Inventory Management', 'Barcode Scanner', 'Sales Reports', 'Staff Management'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Barcode API'],
   },
 ];
 
@@ -432,7 +432,7 @@ function generateProjects(): Project[] {
       descriptionEn: descTemplatesEn[descIdx],
       featuresAr: featureSets[featureIdx].ar,
       featuresEn: featureSets[featureIdx].en,
-      techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+      techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Node.js', 'PostgreSQL', ...(id % 3 === 0 ? ['Docker', 'Redis'] : id % 3 === 1 ? ['GraphQL', 'AWS S3'] : ['Firebase', 'WebSocket'])],
     });
     id++;
   }
