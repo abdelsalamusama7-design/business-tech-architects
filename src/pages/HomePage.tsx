@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, MessageCircle, Code, Smartphone, Brain, ShoppingCart, Building2, Stethoscope, UtensilsCrossed, Pill, CheckCircle2, ExternalLink, Globe, Quote, Star } from 'lucide-react';
 import { allProjects, categories } from '@/data/portfolioData';
+import instaTechLogo from '@/assets/instatech-logo.jpg';
 
 const services = [
   { icon: Code, key: 'services.custom_software' },

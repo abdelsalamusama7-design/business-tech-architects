@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import instaTechLogo from '@/assets/instatech-logo.jpg';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
