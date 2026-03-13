@@ -450,15 +450,15 @@ const HomePage = () => {
       </section>
 
       {/* Why Us */}
-      <section className="py-20 border-t border-border relative">
+      <section className="py-12 sm:py-16 md:py-20 border-t border-border relative">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
               {lang === 'ar' ? 'لماذا Insta-Tech Labs؟' : 'Why Insta-Tech Labs?'}
             </h2>
           </motion.div>
