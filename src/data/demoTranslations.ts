@@ -207,7 +207,6 @@ export const ar: Record<string, string> = {
   'Deal': 'الصفقة',
   'Value': 'القيمة',
   'Probability': 'الاحتمال',
-  'Deals': 'الصفقات',
   'Total Value': 'القيمة الإجمالية',
   'Avg Size': 'متوسط الحجم',
   'Conv. Rate': 'معدل التحويل',
