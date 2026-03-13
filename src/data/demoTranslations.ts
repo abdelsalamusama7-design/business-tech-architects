@@ -317,8 +317,6 @@ export const ar: Record<string, string> = {
   'Specialty': 'التخصص',
   'Batch': 'الدفعة',
   'Days Left': 'الأيام المتبقية',
-  'Ticket Type': 'نوع التذكرة',
-  'Shipment': 'الشحنة',
   '#': '#',
   'Metric': 'المقياس',
   'This Month': 'هذا الشهر',
