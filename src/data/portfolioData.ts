@@ -309,7 +309,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A flexible booking system suitable for clinics, salons, and restaurants with auto-confirmation.',
     featuresAr: ['حجز أونلاين', 'تأكيد تلقائي', 'تذكيرات SMS', 'إدارة المواعيد', 'تقويم تفاعلي'],
     featuresEn: ['Online Booking', 'Auto Confirmation', 'SMS Reminders', 'Appointment Management', 'Interactive Calendar'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Twilio'],
   },
   {
     id: 'crm-sales-tracker',
