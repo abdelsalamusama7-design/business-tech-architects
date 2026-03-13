@@ -384,7 +384,7 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="rounded-2xl neon-border bg-card p-6 relative group hover:border-primary/40 transition-all duration-500"
+                className="rounded-2xl neon-border bg-card p-4 sm:p-6 relative group hover:border-primary/40 transition-all duration-500"
               >
                 <Quote size={32} className="text-primary/10 absolute top-4 end-4 group-hover:text-primary/20 transition-colors" />
                 <div className="flex gap-1 mb-4">
