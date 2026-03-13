@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, Facebook } from 'lucide-react';
 
 const Footer = () => {
   const { t, lang } = useLanguage();
