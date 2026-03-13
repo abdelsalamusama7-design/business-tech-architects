@@ -298,7 +298,7 @@ const HomePage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="rounded-2xl p-6 neon-border bg-card corner-accents group cursor-pointer hover:bg-primary/[0.02] transition-all duration-500"
+                  className="rounded-2xl p-4 sm:p-6 neon-border bg-card corner-accents group cursor-pointer hover:bg-primary/[0.02] transition-all duration-500"
                 >
                   <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] transition-all duration-300">
                     <Icon size={26} className="text-primary-foreground" />
