@@ -319,22 +319,22 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 holo-shimmer" />
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-8 sm:mb-14"
           >
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
               {lang === 'ar' ? 'آراء العملاء' : 'Client Reviews'}
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
               {lang === 'ar' ? 'ماذا يقول عملاؤنا' : 'What Our Clients Say'}
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            <p className="text-muted-foreground text-sm sm:text-lg max-w-xl mx-auto">
               {lang === 'ar' ? 'آراء حقيقية من عملاء حققنا لهم نتائج استثنائية' : 'Real feedback from clients we delivered exceptional results for'}
             </p>
           </motion.div>
