@@ -361,7 +361,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A professional hotel booking platform with price comparison and guest reviews.',
     featuresAr: ['بحث وحجز فوري', 'مقارنة الأسعار', 'تقييمات النزلاء', 'صور بانورامية', 'دفع آمن'],
     featuresEn: ['Instant Search & Book', 'Price Comparison', 'Guest Reviews', 'Panoramic Photos', 'Secure Payment'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Stripe'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Stripe', 'Node.js', 'PostgreSQL', 'Cloudinary'],
   },
   {
     id: 'event-hub-platform',
