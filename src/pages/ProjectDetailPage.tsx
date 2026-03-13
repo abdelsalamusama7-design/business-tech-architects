@@ -9,6 +9,10 @@ const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const { lang } = useLanguage();
   const project = getProjectById(id || '');
+
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [id]);
   
 
   if (!project) {
