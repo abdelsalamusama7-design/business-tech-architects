@@ -30,8 +30,11 @@ import NotFound from "@/pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [showSplash, setShowSplash] = useState(true);
-  const handleSplashFinish = useCallback(() => setShowSplash(false), []);
+  const [showSplash, setShowSplash] = useState(() => !sessionStorage.getItem('splash_shown'));
+  const handleSplashFinish = useCallback(() => {
+    sessionStorage.setItem('splash_shown', 'true');
+    setShowSplash(false);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
