@@ -64,7 +64,7 @@ const Footer = () => {
             للتواصل: 01227080430 / 01554400044
           </p>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Instatech Labs. {t('footer.rights')}.
+            © {new Date().getFullYear()} Insta-Tech Labs. {t('footer.rights')}.
           </p>
         </div>
       </div>

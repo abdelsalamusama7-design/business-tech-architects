@@ -89,7 +89,7 @@ const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
               WebkitTextFillColor: 'transparent',
             }}
           >
-            Instatech Labs
+            Insta-Tech Labs
           </motion.h1>
 
           {/* Tagline */}

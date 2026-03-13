@@ -105,7 +105,7 @@ const translations: Record<string, Record<Language, string>> = {
 
   // AI Chatbot
   'ai.title': { ar: 'مساعد المبيعات الذكي', en: 'Smart Sales Assistant' },
-  'ai.welcome': { ar: 'مرحباً! أنا مساعد Instatech Labs الذكي. كيف يمكنني مساعدتك؟', en: 'Hello! I am Instatech Labs smart assistant. How can I help you?' },
+  'ai.welcome': { ar: 'مرحباً! أنا مساعد Insta-Tech Labs الذكي. كيف يمكنني مساعدتك؟', en: 'Hello! I am Insta-Tech Labs smart assistant. How can I help you?' },
   'ai.placeholder': { ar: 'اكتب رسالتك...', en: 'Type your message...' },
   'ai.send': { ar: 'إرسال', en: 'Send' },
 
