@@ -283,7 +283,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A complete delivery platform with real-time order and driver tracking.',
     featuresAr: ['تتبع لحظي', 'إدارة السائقين', 'إشعارات فورية', 'تقييم الخدمة', 'تقارير الأداء'],
     featuresEn: ['Real-time Tracking', 'Driver Management', 'Instant Notifications', 'Service Rating', 'Performance Reports'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox', 'Node.js', 'PostgreSQL', 'Socket.io', 'Firebase'],
   },
   {
     id: 'realty-finder-hub',
