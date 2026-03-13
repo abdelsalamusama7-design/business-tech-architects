@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getProjectById, categories } from '@/data/portfolioData';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, MessageCircle, Search } from 'lucide-react';
+import { ArrowLeft, MessageCircle, Search, Filter, X } from 'lucide-react';
 import { categoryThemes, getSidebarItems, getStats, getQuickActions, getSectionContent } from '@/data/demoData';
 import { t } from '@/data/demoTranslations';
 
