@@ -9,7 +9,7 @@ const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const { lang } = useLanguage();
   const project = getProjectById(id || '');
-  const [activeScreen, setActiveScreen] = useState(0);
+  
 
   if (!project) {
     return (
