@@ -231,7 +231,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive school management system including student affairs, attendance, grades, and reports.',
     featuresAr: ['إدارة الطلاب', 'نظام الحضور والغياب', 'إدارة الدرجات', 'تواصل أولياء الأمور', 'جدول الحصص'],
     featuresEn: ['Student Management', 'Attendance System', 'Grade Management', 'Parent Communication', 'Class Schedule'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Redis'],
   },
   {
     id: 'hr-flow-system',
