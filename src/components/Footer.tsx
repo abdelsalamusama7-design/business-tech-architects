@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Phone, MessageCircle, Facebook } from 'lucide-react';
+import instaTechLogo from '@/assets/instatech-logo.jpg';
 
 const Footer = () => {
   const { t, lang } = useLanguage();
