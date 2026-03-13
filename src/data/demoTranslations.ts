@@ -396,7 +396,6 @@ export const ar: Record<string, string> = {
   'Total Items': 'إجمالي العناصر',
   'Out of Stock': 'نفد المخزون',
   'Most Viewed': 'الأكثر مشاهدة',
-  'Best Seller': 'الأكثر مبيعاً',
   'Total Staff': 'إجمالي الموظفين',
   'On Duty': 'في العمل',
   "Today's Revenue": 'إيرادات اليوم',
