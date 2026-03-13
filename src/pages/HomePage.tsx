@@ -233,7 +233,7 @@ const HomePage = () => {
                   to={`/portfolio/${project.id}`}
                   className="block rounded-2xl overflow-hidden group relative neon-border bg-card hover:border-primary/40 transition-all duration-500"
                 >
-                  <div className="h-44 overflow-hidden relative">
+                  <div className="h-32 sm:h-40 md:h-44 overflow-hidden relative">
                     <img
                       src={project.image}
                       alt={lang === 'ar' ? project.titleAr : project.title}
