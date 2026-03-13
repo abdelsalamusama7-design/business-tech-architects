@@ -374,7 +374,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive platform for organizing and managing events and conferences with an integrated ticketing system.',
     featuresAr: ['إدارة الفعاليات', 'نظام التذاكر', 'تسجيل الحضور', 'بث مباشر', 'تقارير الفعالية'],
     featuresEn: ['Event Management', 'Ticketing System', 'Attendance Check-in', 'Live Streaming', 'Event Reports'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'WebSocket', 'Stripe'],
   },
   {
     id: 'retail-smart-pos',
