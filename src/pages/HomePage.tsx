@@ -53,7 +53,7 @@ const HomePage = () => {
                 <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl scale-150" />
                 <img
                   src={instaTechLogo}
-                  alt="Instatech Labs"
+                  alt="Insta-Tech Labs"
                   className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
                 />
               </div>
