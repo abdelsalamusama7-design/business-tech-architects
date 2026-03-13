@@ -1,21 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2, Code2, Globe, Monitor, Smartphone, Layout, Shield, Zap, Users, MessageCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2, Code2, Globe, Monitor, Smartphone, Layout, Shield, Zap, Users, MessageCircle, Tablet } from 'lucide-react';
 import { getProjectById, categories, allProjects } from '@/data/portfolioData';
 import { useState } from 'react';
-
-import dashboardMockup from '@/assets/mockups/dashboard-mockup.jpg';
-import responsiveMockup from '@/assets/mockups/responsive-mockup.jpg';
-import landingMockup from '@/assets/mockups/landing-mockup.jpg';
-import authMockup from '@/assets/mockups/auth-mockup.jpg';
-
-const mockupScreens = [
-  { image: dashboardMockup, labelAr: 'لوحة التحكم', labelEn: 'Dashboard' },
-  { image: landingMockup, labelAr: 'الصفحة الرئيسية', labelEn: 'Landing Page' },
-  { image: responsiveMockup, labelAr: 'تصميم متجاوب', labelEn: 'Responsive Design' },
-  { image: authMockup, labelAr: 'تسجيل الدخول', labelEn: 'Authentication' },
-];
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
