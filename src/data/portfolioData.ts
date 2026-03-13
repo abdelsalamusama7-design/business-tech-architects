@@ -257,7 +257,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An advanced inventory and warehouse management system with product tracking and smart alerts.',
     featuresAr: ['تتبع المخزون', 'تنبيهات النقص', 'باركود سكانر', 'تقارير المخزون', 'إدارة الموردين'],
     featuresEn: ['Inventory Tracking', 'Low Stock Alerts', 'Barcode Scanner', 'Stock Reports', 'Supplier Management'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Barcode API'],
   },
   {
     id: 'hospital-care-platform',
