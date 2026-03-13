@@ -218,7 +218,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An AI assistant for analyzing business data and providing performance improvement recommendations.',
     featuresAr: ['تحليل البيانات بالذكاء الاصطناعي', 'توصيات ذكية', 'تقارير تلقائية', 'تكامل مع CRM', 'دردشة تفاعلية'],
     featuresEn: ['AI Data Analysis', 'Smart Recommendations', 'Auto Reports', 'CRM Integration', 'Interactive Chat'],
-    techStack: ['React', 'TypeScript', 'OpenAI', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'OpenAI', 'Supabase', 'Python', 'FastAPI', 'LangChain', 'Docker'],
   },
   {
     id: 'school-master-pro',
