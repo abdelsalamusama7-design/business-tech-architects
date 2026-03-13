@@ -98,7 +98,7 @@ const translations: Record<string, Record<Language, string>> = {
   'contact.whatsapp': { ar: 'واتساب', en: 'WhatsApp' },
 
   // Footer
-  'footer.description': { ar: 'Instatech Labs - شريكك التقني لبناء أنظمة رقمية ذكية.', en: 'Instatech Labs - Your tech partner for building smart digital systems.' },
+  'footer.description': { ar: 'Insta-Tech Labs - شريكك التقني لبناء أنظمة رقمية ذكية.', en: 'Insta-Tech Labs - Your tech partner for building smart digital systems.' },
   'footer.rights': { ar: 'جميع الحقوق محفوظة', en: 'All rights reserved' },
   'footer.quickLinks': { ar: 'روابط سريعة', en: 'Quick Links' },
   'footer.contactInfo': { ar: 'معلومات التواصل', en: 'Contact Info' },
