@@ -175,10 +175,10 @@ const HomePage = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-16 border-y border-border relative overflow-hidden">
+      <section className="py-10 sm:py-16 border-y border-border relative overflow-hidden">
         <div className="absolute inset-0 holo-shimmer" />
         <div className="container mx-auto px-4 relative">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, i) => {
               const { count, ref } = useCounter(stat.value);
               const Icon = stat.icon;
