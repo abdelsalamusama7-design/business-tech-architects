@@ -195,7 +195,7 @@ const HomePage = () => {
                   <div className="w-12 h-12 rounded-xl neon-border bg-primary/5 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/10 transition-colors">
                     <Icon size={22} className="text-primary" />
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">{count}{stat.suffix}</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-1">{count}{stat.suffix}</div>
                   <div className="text-sm text-muted-foreground">{lang === 'ar' ? stat.labelAr : stat.labelEn}</div>
                 </motion.div>
               );
