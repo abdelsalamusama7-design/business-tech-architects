@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, Mail, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, Send, CheckCircle2, Facebook } from 'lucide-react';
 
 const ContactPage = () => {
   const { t, lang } = useLanguage();
