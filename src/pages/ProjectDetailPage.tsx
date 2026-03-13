@@ -1,27 +1,15 @@
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2, Code2, Globe, Monitor, Smartphone, Layout, Shield, Zap, Users, MessageCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink, CheckCircle2, Code2, Globe, Monitor, Smartphone, Layout, Shield, Zap, Users, MessageCircle, Tablet } from 'lucide-react';
 import { getProjectById, categories, allProjects } from '@/data/portfolioData';
-import { useState } from 'react';
 
-import dashboardMockup from '@/assets/mockups/dashboard-mockup.jpg';
-import responsiveMockup from '@/assets/mockups/responsive-mockup.jpg';
-import landingMockup from '@/assets/mockups/landing-mockup.jpg';
-import authMockup from '@/assets/mockups/auth-mockup.jpg';
-
-const mockupScreens = [
-  { image: dashboardMockup, labelAr: 'لوحة التحكم', labelEn: 'Dashboard' },
-  { image: landingMockup, labelAr: 'الصفحة الرئيسية', labelEn: 'Landing Page' },
-  { image: responsiveMockup, labelAr: 'تصميم متجاوب', labelEn: 'Responsive Design' },
-  { image: authMockup, labelAr: 'تسجيل الدخول', labelEn: 'Authentication' },
-];
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const { lang } = useLanguage();
   const project = getProjectById(id || '');
-  const [activeScreen, setActiveScreen] = useState(0);
+  
 
   if (!project) {
     return (
@@ -109,7 +97,7 @@ const ProjectDetailPage = () => {
           </div>
         </motion.div>
 
-        {/* Mockup Gallery */}
+        {/* Device Mockup Gallery - Real Project Image */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -117,39 +105,92 @@ const ProjectDetailPage = () => {
           className="mb-16"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-            {lang === 'ar' ? 'عناصر ومكونات الموقع' : 'Website Components & Screens'}
+            {lang === 'ar' ? 'معاينة المشروع على الأجهزة' : 'Project Preview on Devices'}
           </h2>
 
-          {/* Active Screen */}
-          <div className="rounded-2xl overflow-hidden border border-border mb-4 relative group cursor-pointer" onClick={() => window.location.href = demoUrl}>
-            <img
-              src={mockupScreens[activeScreen].image}
-              alt={lang === 'ar' ? mockupScreens[activeScreen].labelAr : mockupScreens[activeScreen].labelEn}
-              className="w-full h-64 md:h-[450px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-            <div className="absolute inset-0 bg-background/0 group-hover:bg-background/30 transition-colors flex items-center justify-center">
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold inline-flex items-center gap-2 shadow-xl">
-                <Globe size={18} /> {lang === 'ar' ? 'معاينة الموقع' : 'Preview Website'}
-              </span>
+          {/* Device Frames Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+            {/* Desktop Frame */}
+            <div className="md:col-span-7">
+              <div className="bg-muted/30 rounded-xl border border-border overflow-hidden shadow-xl">
+                {/* Browser Chrome */}
+                <div className="bg-muted/60 px-4 py-2.5 flex items-center gap-2 border-b border-border">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-400/70" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
+                    <div className="w-3 h-3 rounded-full bg-green-400/70" />
+                  </div>
+                  <div className="flex-1 mx-3">
+                    <div className="bg-background/60 rounded-md px-3 py-1 text-[10px] text-muted-foreground truncate flex items-center gap-1.5">
+                      <Globe size={10} />
+                      {project.url || `${project.id}.lovable.app`}
+                    </div>
+                  </div>
+                  <Monitor size={14} className="text-muted-foreground" />
+                </div>
+                {/* Screen */}
+                <Link to={demoUrl} className="block relative group cursor-pointer">
+                  <img
+                    src={project.image}
+                    alt={lang === 'ar' ? project.titleAr : project.title}
+                    className="w-full h-[280px] md:h-[380px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-background/0 group-hover:bg-background/30 transition-colors flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity px-5 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm inline-flex items-center gap-2 shadow-xl">
+                      <Globe size={16} /> {lang === 'ar' ? 'معاينة الموقع' : 'Preview Website'}
+                    </span>
+                  </div>
+                </Link>
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-2 flex items-center justify-center gap-1.5">
+                <Monitor size={12} /> {lang === 'ar' ? 'عرض سطح المكتب' : 'Desktop View'}
+              </p>
             </div>
-          </div>
 
-          {/* Thumbnails */}
-          <div className="grid grid-cols-4 gap-3">
-            {mockupScreens.map((screen, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveScreen(i)}
-                className={`rounded-xl overflow-hidden border-2 transition-all duration-300 ${
-                  activeScreen === i ? 'border-primary glow-primary' : 'border-border hover:border-primary/50'
-                }`}
-              >
-                <img src={screen.image} alt={lang === 'ar' ? screen.labelAr : screen.labelEn} className="w-full h-20 md:h-28 object-cover" />
-                <p className="text-xs font-medium text-center py-2 text-muted-foreground">
-                  {lang === 'ar' ? screen.labelAr : screen.labelEn}
-                </p>
-              </button>
-            ))}
+            {/* Tablet Frame */}
+            <div className="md:col-span-3">
+              <div className="bg-muted/30 rounded-2xl border-2 border-muted/50 overflow-hidden shadow-lg mx-auto max-w-[220px] md:max-w-none">
+                <div className="bg-muted/40 py-1.5 flex justify-center">
+                  <div className="w-12 h-1 rounded-full bg-muted-foreground/20" />
+                </div>
+                <Link to={demoUrl} className="block">
+                  <img
+                    src={project.image}
+                    alt={`${lang === 'ar' ? project.titleAr : project.title} - Tablet`}
+                    className="w-full h-[200px] md:h-[300px] object-cover object-top"
+                    loading="lazy"
+                  />
+                </Link>
+                <div className="bg-muted/40 py-1.5" />
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-2 flex items-center justify-center gap-1.5">
+                <Tablet size={12} /> {lang === 'ar' ? 'عرض التابلت' : 'Tablet View'}
+              </p>
+            </div>
+
+            {/* Mobile Frame */}
+            <div className="md:col-span-2">
+              <div className="bg-muted/30 rounded-3xl border-2 border-muted/50 overflow-hidden shadow-lg mx-auto w-[140px] md:w-full max-w-[160px]">
+                <div className="bg-muted/40 py-2 flex justify-center">
+                  <div className="w-8 h-1 rounded-full bg-muted-foreground/20" />
+                </div>
+                <Link to={demoUrl} className="block">
+                  <img
+                    src={project.image}
+                    alt={`${lang === 'ar' ? project.titleAr : project.title} - Mobile`}
+                    className="w-full h-[200px] md:h-[260px] object-cover object-top"
+                    loading="lazy"
+                  />
+                </Link>
+                <div className="bg-muted/40 py-2 flex justify-center">
+                  <div className="w-8 h-8 rounded-full border border-muted-foreground/20" />
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-2 flex items-center justify-center gap-1.5">
+                <Smartphone size={12} /> {lang === 'ar' ? 'عرض الموبايل' : 'Mobile View'}
+              </p>
+            </div>
           </div>
         </motion.div>
 
