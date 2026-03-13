@@ -58,7 +58,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center space-y-2">
           <p className="text-sm font-semibold text-foreground">
-            {lang === 'ar' ? 'تنفيذ وتصميم' : 'Designed & Developed by'} Instatech Labs
+            {lang === 'ar' ? 'تنفيذ وتصميم' : 'Designed & Developed by'} Insta-Tech Labs
           </p>
           <p className="text-sm text-muted-foreground" dir="ltr">
             للتواصل: 01227080430 / 01554400044
