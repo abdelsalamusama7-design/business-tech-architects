@@ -58,8 +58,8 @@ const HomePage = () => {
                 />
               </div>
             </motion.div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text leading-tight">
-              {t('hero.headline')}
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight pb-2">
+              <span className="gradient-text inline-block pb-1">{t('hero.headline')}</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
               {t('hero.subheadline')}
