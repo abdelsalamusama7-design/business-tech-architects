@@ -29,9 +29,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg hero-gradient flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">IL</span>
-            </div>
+            <img src={instaTechLogo} alt="Instatech Labs" className="w-9 h-9 rounded-lg object-cover" />
             <span className="font-bold text-lg text-foreground">Instatech Labs</span>
           </Link>
 

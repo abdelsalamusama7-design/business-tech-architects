@@ -43,6 +43,21 @@ const HomePage = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-8 flex justify-center"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl scale-150" />
+                <img
+                  src={instaTechLogo}
+                  alt="Instatech Labs"
+                  className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
+                />
+              </div>
+            </motion.div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text leading-tight">
               {t('hero.headline')}
             </h1>
