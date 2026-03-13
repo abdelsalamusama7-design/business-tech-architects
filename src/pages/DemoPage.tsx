@@ -5,6 +5,7 @@ import { getProjectById, categories } from '@/data/portfolioData';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, MessageCircle, Search } from 'lucide-react';
 import { categoryThemes, getSidebarItems, getStats, getQuickActions, getSectionContent } from '@/data/demoData';
+import { t } from '@/data/demoTranslations';
 
 const DemoPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -16,8 +17,12 @@ const DemoPage = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-foreground mb-4">Demo not found</h1>
-          <Link to="/portfolio" className="text-primary hover:underline">Back to Portfolio</Link>
+          <h1 className="text-2xl font-bold text-foreground mb-4">
+            {lang === 'ar' ? 'العرض التوضيحي غير موجود' : 'Demo not found'}
+          </h1>
+          <Link to="/portfolio" className="text-primary hover:underline">
+            {lang === 'ar' ? 'العودة للمعرض' : 'Back to Portfolio'}
+          </Link>
         </div>
       </div>
     );
@@ -39,12 +44,12 @@ const DemoPage = () => {
   const section = getSectionContent(activeLabel);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-slate-950 text-white" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* Top Banner */}
       <div className={`bg-gradient-to-r ${gradientClass} text-center py-2.5 px-4 text-xs font-medium text-white`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to={`/portfolio/${id}`} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
-            <ArrowLeft size={14} />
+            <ArrowLeft size={14} className={lang === 'ar' ? 'rotate-180' : ''} />
             <span>{lang === 'ar' ? 'عودة للتفاصيل' : 'Back to Details'}</span>
           </Link>
           <span className="hidden sm:inline">
@@ -94,7 +99,7 @@ const DemoPage = () => {
               }`}
             >
               <item.icon size={16} />
-              <span>{item.label}</span>
+              <span>{t(item.label, lang)}</span>
             </button>
           ))}
         </aside>
@@ -120,7 +125,7 @@ const DemoPage = () => {
                       <h1 className="text-xl md:text-2xl font-bold mb-1">{lang === 'ar' ? heroTitle.ar : heroTitle.en}</h1>
                       <p className="text-sm opacity-80 max-w-md">{lang === 'ar' ? heroDesc.ar : heroDesc.en}</p>
                     </div>
-                    {ThemeIcon && <ThemeIcon size={120} className="absolute -bottom-4 -right-4 opacity-10" />}
+                    {ThemeIcon && <ThemeIcon size={120} className="absolute -bottom-4 end-[-16px] opacity-10" />}
                   </div>
 
                   {/* Stats */}
@@ -134,7 +139,7 @@ const DemoPage = () => {
                         className="bg-slate-900 border border-slate-800 rounded-xl p-4 hover:border-slate-700 transition-colors"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs text-slate-400">{stat.label}</span>
+                          <span className="text-xs text-slate-400">{t(stat.label, lang)}</span>
                           <div className={`w-7 h-7 rounded-lg bg-gradient-to-br ${gradientClass} bg-opacity-20 flex items-center justify-center`}>
                             <stat.icon size={14} className="text-white/80" />
                           </div>
@@ -158,8 +163,8 @@ const DemoPage = () => {
                         <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${gradientClass} bg-opacity-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
                           <action.icon size={20} className="text-white/80" />
                         </div>
-                        <p className="text-sm font-medium">{action.label}</p>
-                        <p className="text-xs text-slate-400 mt-1">{action.desc}</p>
+                        <p className="text-sm font-medium">{t(action.label, lang)}</p>
+                        <p className="text-xs text-slate-400 mt-1">{t(action.desc, lang)}</p>
                       </div>
                     ))}
                   </div>
@@ -208,8 +213,8 @@ const DemoPage = () => {
                 <>
                   <div className="flex items-center justify-between mb-6">
                     <div>
-                      <h2 className="text-lg font-bold">{section.title}</h2>
-                      <p className="text-xs text-slate-400">{section.description}</p>
+                      <h2 className="text-lg font-bold">{t(section.title, lang)}</h2>
+                      <p className="text-xs text-slate-400">{t(section.description, lang)}</p>
                     </div>
                     <button className={`text-xs bg-gradient-to-r ${gradientClass} text-white px-4 py-2 rounded-lg font-medium`}>
                       {lang === 'ar' ? '+ إضافة جديد' : '+ Add New'}
@@ -221,7 +226,7 @@ const DemoPage = () => {
                     <div className="grid grid-cols-3 gap-3 mb-6">
                       {section.stats.map((s, i) => (
                         <div key={i} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-                          <p className="text-xs text-slate-400 mb-1">{s.label}</p>
+                          <p className="text-xs text-slate-400 mb-1">{t(s.label, lang)}</p>
                           <p className="text-lg font-bold">{s.value}</p>
                         </div>
                       ))}
@@ -248,7 +253,7 @@ const DemoPage = () => {
             }`}
           >
             <item.icon size={18} />
-            <span className="truncate max-w-[56px]">{item.label}</span>
+            <span className="truncate max-w-[56px]">{t(item.label, lang)}</span>
           </button>
         ))}
       </div>
@@ -324,7 +329,7 @@ function SectionTable({ section, gradientClass, lang }: { section: { headers: st
           <thead>
             <tr className="border-b border-slate-800">
               {section.headers.map((h, i) => (
-                <th key={i} className="text-start p-3 text-slate-400 font-medium">{h}</th>
+                <th key={i} className="text-start p-3 text-slate-400 font-medium">{t(h, lang)}</th>
               ))}
             </tr>
           </thead>
