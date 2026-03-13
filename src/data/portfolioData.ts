@@ -205,7 +205,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An interactive digital food menu with QR Code and real-time item and price updates.',
     featuresAr: ['QR Code للطاولات', 'تحديث لحظي', 'صور عالية الجودة', 'تصنيف الأصناف', 'دعم متعدد اللغات'],
     featuresEn: ['Table QR Codes', 'Real-time Updates', 'HD Images', 'Item Categories', 'Multi-language Support'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Firebase', 'QR Code API'],
   },
   {
     id: 'ai-biz-assistant',
