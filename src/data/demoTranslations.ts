@@ -420,7 +420,6 @@ export const ar: Record<string, string> = {
   'Occupancy Rate': 'معدل الإشغال',
   'Active Leases': 'عقود نشطة',
   'Renewals Due': 'تجديدات مستحقة',
-  'Low Stock': 'مخزون منخفض',
   'Expired': 'منتهي',
   'Total Capacity': 'السعة الإجمالية',
   'Utilization': 'الاستخدام',
