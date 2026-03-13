@@ -179,7 +179,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive pharmacy platform for managing inventory, prescriptions, and sales efficiently.',
     featuresAr: ['إدارة المخزون', 'تتبع الوصفات', 'تنبيهات انتهاء الصلاحية', 'نقطة بيع متكاملة', 'تقارير المبيعات'],
     featuresEn: ['Inventory Management', 'Prescription Tracking', 'Expiry Alerts', 'Integrated POS', 'Sales Reports'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts', 'Node.js', 'PostgreSQL', 'Docker'],
   },
   {
     id: 'resto-order-pos',
