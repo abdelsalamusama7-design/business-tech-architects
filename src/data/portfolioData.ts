@@ -244,7 +244,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An integrated HR system for managing employees, payroll, leaves, and evaluations.',
     featuresAr: ['إدارة الموظفين', 'مسير الرواتب', 'نظام الإجازات', 'تقييم الأداء', 'الهيكل التنظيمي'],
     featuresEn: ['Employee Management', 'Payroll', 'Leave System', 'Performance Reviews', 'Org Chart'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts', 'Node.js', 'PostgreSQL', 'Docker'],
   },
   {
     id: 'stock-warehouse-mgmt',
