@@ -75,11 +75,11 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden tech-grid scan-line">
+      <section className="relative pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24 overflow-hidden tech-grid scan-line">
         {/* Ambient orbs */}
-        <div className="absolute top-10 end-[10%] w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px] animate-pulse-glow" />
-        <div className="absolute bottom-0 start-[5%] w-[500px] h-[500px] rounded-full bg-accent/8 blur-[120px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[hsl(250,70%,55%)]/5 blur-[80px]" />
+        <div className="absolute top-10 end-[10%] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] rounded-full bg-primary/8 blur-[80px] md:blur-[100px] animate-pulse-glow" />
+        <div className="absolute bottom-0 start-[5%] w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full bg-accent/8 blur-[100px] md:blur-[120px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] rounded-full bg-[hsl(250,70%,55%)]/5 blur-[60px] md:blur-[80px]" />
 
         {/* Floating particles */}
         <FloatingParticle delay={0} x="10%" y="20%" size={6} />
@@ -138,17 +138,17 @@ const HomePage = () => {
               </span>
             </motion.div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight pb-2">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight pb-2">
               <span className="gradient-text inline-block pb-1">{t('hero.headline')}</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-10 leading-relaxed max-w-2xl mx-auto px-2">
               {t('hero.subheadline')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
               <Link
                 to="/consultation"
-                className="group relative px-8 py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-all glow-primary inline-flex items-center justify-center gap-2 overflow-hidden"
+                className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-base sm:text-lg hover:opacity-90 transition-all glow-primary inline-flex items-center justify-center gap-2 overflow-hidden"
               >
                 <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
                 <span className="relative">{t('hero.cta1')}</span> <Arrow size={20} className="relative" />
@@ -157,7 +157,7 @@ const HomePage = () => {
                 href="https://wa.me/201227080430"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 rounded-xl border-2 border-primary/30 text-primary font-semibold text-lg hover:bg-primary/5 hover:border-primary/60 transition-all inline-flex items-center justify-center gap-2 neon-border"
+                className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-primary/30 text-primary font-semibold text-base sm:text-lg hover:bg-primary/5 hover:border-primary/60 transition-all inline-flex items-center justify-center gap-2 neon-border"
               >
                 <MessageCircle size={20} /> {t('hero.cta2')}
               </a>
@@ -175,10 +175,10 @@ const HomePage = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-16 border-y border-border relative overflow-hidden">
+      <section className="py-10 sm:py-16 border-y border-border relative overflow-hidden">
         <div className="absolute inset-0 holo-shimmer" />
         <div className="container mx-auto px-4 relative">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, i) => {
               const { count, ref } = useCounter(stat.value);
               const Icon = stat.icon;
@@ -195,7 +195,7 @@ const HomePage = () => {
                   <div className="w-12 h-12 rounded-xl neon-border bg-primary/5 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/10 transition-colors">
                     <Icon size={22} className="text-primary" />
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">{count}{stat.suffix}</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-1">{count}{stat.suffix}</div>
                   <div className="text-sm text-muted-foreground">{lang === 'ar' ? stat.labelAr : stat.labelEn}</div>
                 </motion.div>
               );
@@ -205,22 +205,22 @@ const HomePage = () => {
       </section>
 
       {/* Portfolio Preview */}
-      <section className="py-20 relative">
+      <section className="py-12 sm:py-16 md:py-20 relative">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-8 sm:mb-14"
           >
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
               {lang === 'ar' ? 'أحدث المشاريع' : 'Latest Projects'}
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">{t('portfolio.title')}</h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">{t('portfolio.subtitle')}</p>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">{t('portfolio.title')}</h2>
+            <p className="text-muted-foreground text-sm sm:text-lg max-w-xl mx-auto">{t('portfolio.subtitle')}</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {allProjects.slice(0, 8).map((project, i) => (
               <motion.div
                 key={project.id}
@@ -233,7 +233,7 @@ const HomePage = () => {
                   to={`/portfolio/${project.id}`}
                   className="block rounded-2xl overflow-hidden group relative neon-border bg-card hover:border-primary/40 transition-all duration-500"
                 >
-                  <div className="h-44 overflow-hidden relative">
+                  <div className="h-32 sm:h-40 md:h-44 overflow-hidden relative">
                     <img
                       src={project.image}
                       alt={lang === 'ar' ? project.titleAr : project.title}
@@ -252,11 +252,11 @@ const HomePage = () => {
                       </div>
                     )}
                   </div>
-                  <div className="p-4">
-                    <p className="text-xs text-primary/70 font-medium mb-1">
+                  <div className="p-2.5 sm:p-4">
+                    <p className="text-[10px] sm:text-xs text-primary/70 font-medium mb-0.5 sm:mb-1 truncate">
                       {lang === 'ar' ? categories[project.catIndex]?.ar : categories[project.catIndex]?.en}
                     </p>
-                    <h3 className="font-semibold text-foreground text-sm">{lang === 'ar' ? project.titleAr : project.title}</h3>
+                    <h3 className="font-semibold text-foreground text-xs sm:text-sm line-clamp-1">{lang === 'ar' ? project.titleAr : project.title}</h3>
                   </div>
                 </Link>
               </motion.div>
@@ -272,23 +272,23 @@ const HomePage = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tech-grid opacity-50" />
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-8 sm:mb-14"
           >
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 mb-4">
               {lang === 'ar' ? 'حلول متكاملة' : 'Full Solutions'}
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">{t('services.title')}</h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">{t('services.subtitle')}</p>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">{t('services.title')}</h2>
+            <p className="text-muted-foreground text-sm sm:text-lg max-w-xl mx-auto">{t('services.subtitle')}</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {services.map((service, i) => {
               const Icon = service.icon;
               return (
@@ -298,7 +298,7 @@ const HomePage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="rounded-2xl p-6 neon-border bg-card corner-accents group cursor-pointer hover:bg-primary/[0.02] transition-all duration-500"
+                  className="rounded-2xl p-4 sm:p-6 neon-border bg-card corner-accents group cursor-pointer hover:bg-primary/[0.02] transition-all duration-500"
                 >
                   <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] transition-all duration-300">
                     <Icon size={26} className="text-primary-foreground" />
@@ -319,27 +319,27 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 holo-shimmer" />
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-8 sm:mb-14"
           >
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
               {lang === 'ar' ? 'آراء العملاء' : 'Client Reviews'}
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
               {lang === 'ar' ? 'ماذا يقول عملاؤنا' : 'What Our Clients Say'}
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            <p className="text-muted-foreground text-sm sm:text-lg max-w-xl mx-auto">
               {lang === 'ar' ? 'آراء حقيقية من عملاء حققنا لهم نتائج استثنائية' : 'Real feedback from clients we delivered exceptional results for'}
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 nameAr: 'د. أحمد حسن', nameEn: 'Dr. Ahmed Hassan',
@@ -384,7 +384,7 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="rounded-2xl neon-border bg-card p-6 relative group hover:border-primary/40 transition-all duration-500"
+                className="rounded-2xl neon-border bg-card p-4 sm:p-6 relative group hover:border-primary/40 transition-all duration-500"
               >
                 <Quote size={32} className="text-primary/10 absolute top-4 end-4 group-hover:text-primary/20 transition-colors" />
                 <div className="flex gap-1 mb-4">
@@ -411,25 +411,25 @@ const HomePage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="relative rounded-3xl overflow-hidden">
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden">
             <div className="absolute inset-0 hero-gradient" />
             <div className="absolute inset-0 tech-grid opacity-20" />
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
-            <div className="relative p-10 md:p-16 text-center">
+            <div className="relative p-6 sm:p-10 md:p-16 text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
                 <Sparkles size={32} className="text-primary-foreground/60 mx-auto mb-4" />
-                <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4">{t('consultation.title')}</h2>
-                <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">{t('consultation.subtitle')}</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary-foreground mb-3 sm:mb-4">{t('consultation.title')}</h2>
+                <p className="text-primary-foreground/80 text-sm sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">{t('consultation.subtitle')}</p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                   <Link
                     to="/consultation"
-                    className="group relative px-8 py-4 rounded-xl bg-background text-foreground font-semibold hover:bg-background/90 transition-all inline-flex items-center justify-center gap-2 overflow-hidden"
+                    className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-background text-foreground font-semibold text-sm sm:text-base hover:bg-background/90 transition-all inline-flex items-center justify-center gap-2 overflow-hidden"
                   >
                     <span className="absolute inset-0 bg-primary/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
                     <span className="relative">{t('hero.cta1')}</span> <Arrow size={20} className="relative" />
@@ -438,7 +438,7 @@ const HomePage = () => {
                     href="https://wa.me/201227080430"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-8 py-4 rounded-xl border-2 border-primary-foreground/30 text-primary-foreground font-semibold hover:bg-primary-foreground/10 transition-colors inline-flex items-center justify-center gap-2"
+                    className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-primary-foreground/30 text-primary-foreground font-semibold text-sm sm:text-base hover:bg-primary-foreground/10 transition-colors inline-flex items-center justify-center gap-2"
                   >
                     <MessageCircle size={20} /> {t('hero.cta2')}
                   </a>
@@ -450,19 +450,19 @@ const HomePage = () => {
       </section>
 
       {/* Why Us */}
-      <section className="py-20 border-t border-border relative">
+      <section className="py-12 sm:py-16 md:py-20 border-t border-border relative">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
               {lang === 'ar' ? 'لماذا Insta-Tech Labs؟' : 'Why Insta-Tech Labs?'}
             </h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {[
               { icon: Cpu, ar: 'فريق متخصص', en: 'Expert Team' },
               { icon: Clock, ar: 'تسليم في الوقت المحدد', en: 'On-Time Delivery' },
