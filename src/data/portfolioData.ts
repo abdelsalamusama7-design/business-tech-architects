@@ -387,7 +387,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An advanced retail POS system with inventory management and reporting.',
     featuresAr: ['نقطة بيع سريعة', 'إدارة المخزون', 'باركود سكانر', 'تقارير المبيعات', 'إدارة الموظفين'],
     featuresEn: ['Fast POS', 'Inventory Management', 'Barcode Scanner', 'Sales Reports', 'Staff Management'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Barcode API'],
   },
 ];
 
