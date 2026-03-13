@@ -54,8 +54,8 @@ const DemoPage = () => {
           </Link>
           <span className="hidden sm:inline">
             {lang === 'ar'
-              ? `عرض توضيحي: "${project.titleAr}" — Instatech Labs`
-              : `Demo: "${project.title}" — Instatech Labs`}
+              ? `عرض توضيحي: "${project.titleAr}" — Insta-Tech Labs`
+              : `Demo: "${project.title}" — Insta-Tech Labs`}
           </span>
           <a href="tel:01227080430" className="hover:opacity-80 transition-opacity">📞 01227080430</a>
         </div>
