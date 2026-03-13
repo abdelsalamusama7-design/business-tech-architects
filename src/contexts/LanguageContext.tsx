@@ -141,8 +141,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   );
 };
 
+const fallbackContext: LanguageContextType = {
+  lang: 'ar',
+  setLang: () => {},
+  t: (key: string) => key,
+  dir: 'rtl',
+};
+
 export const useLanguage = () => {
   const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error('useLanguage must be used within LanguageProvider');
-  return ctx;
+  return ctx ?? fallbackContext;
 };
