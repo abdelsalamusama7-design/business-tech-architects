@@ -220,7 +220,7 @@ const HomePage = () => {
             <p className="text-muted-foreground text-sm sm:text-lg max-w-xl mx-auto">{t('portfolio.subtitle')}</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {allProjects.slice(0, 8).map((project, i) => (
               <motion.div
                 key={project.id}
