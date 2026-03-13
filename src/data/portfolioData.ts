@@ -335,7 +335,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A comprehensive logistics platform for fleet management, shipments, and delivery tracking.',
     featuresAr: ['إدارة الأسطول', 'تتبع الشحنات', 'تخطيط المسارات', 'إدارة السائقين', 'تقارير التوصيل'],
     featuresEn: ['Fleet Management', 'Shipment Tracking', 'Route Planning', 'Driver Management', 'Delivery Reports'],
-    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Mapbox', 'Node.js', 'PostgreSQL', 'Docker', 'Redis'],
   },
   {
     id: 'gym-fit-manager',
