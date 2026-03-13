@@ -138,17 +138,17 @@ const HomePage = () => {
               </span>
             </motion.div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight pb-2">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight pb-2">
               <span className="gradient-text inline-block pb-1">{t('hero.headline')}</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-10 leading-relaxed max-w-2xl mx-auto px-2">
               {t('hero.subheadline')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
               <Link
                 to="/consultation"
-                className="group relative px-8 py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-lg hover:opacity-90 transition-all glow-primary inline-flex items-center justify-center gap-2 overflow-hidden"
+                className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl hero-gradient text-primary-foreground font-semibold text-base sm:text-lg hover:opacity-90 transition-all glow-primary inline-flex items-center justify-center gap-2 overflow-hidden"
               >
                 <span className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
                 <span className="relative">{t('hero.cta1')}</span> <Arrow size={20} className="relative" />
@@ -157,7 +157,7 @@ const HomePage = () => {
                 href="https://wa.me/201227080430"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 rounded-xl border-2 border-primary/30 text-primary font-semibold text-lg hover:bg-primary/5 hover:border-primary/60 transition-all inline-flex items-center justify-center gap-2 neon-border"
+                className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-primary/30 text-primary font-semibold text-base sm:text-lg hover:bg-primary/5 hover:border-primary/60 transition-all inline-flex items-center justify-center gap-2 neon-border"
               >
                 <MessageCircle size={20} /> {t('hero.cta2')}
               </a>
