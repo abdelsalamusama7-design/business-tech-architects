@@ -114,7 +114,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A luxury online fashion boutique showcasing the latest evening dresses and high-end clothing.',
     featuresAr: ['عرض أزياء تفاعلي', 'نظام مقاسات ذكي', 'قائمة المفضلة', 'مشاركة على السوشيال ميديا'],
     featuresEn: ['Interactive Fashion Display', 'Smart Size System', 'Wishlist', 'Social Media Sharing'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'REST API', 'Cloudinary'],
   },
   {
     id: 'blush-boot-bliss',
