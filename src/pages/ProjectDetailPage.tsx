@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
