@@ -432,7 +432,7 @@ function generateProjects(): Project[] {
       descriptionEn: descTemplatesEn[descIdx],
       featuresAr: featureSets[featureIdx].ar,
       featuresEn: featureSets[featureIdx].en,
-      techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+      techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Node.js', 'PostgreSQL', ...(id % 3 === 0 ? ['Docker', 'Redis'] : id % 3 === 1 ? ['GraphQL', 'AWS S3'] : ['Firebase', 'WebSocket'])],
     });
     id++;
   }
