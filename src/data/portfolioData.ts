@@ -127,7 +127,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A trendy shoe store providing an enjoyable shopping experience with a wide collection of boots and footwear.',
     featuresAr: ['تصفح حسب الفئة', 'عرض 360 درجة', 'مراجعات العملاء', 'شحن سريع'],
     featuresEn: ['Browse by Category', '360° View', 'Customer Reviews', 'Fast Shipping'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB'],
   },
   {
     id: 'fin-feeder-platform',
