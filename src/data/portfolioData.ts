@@ -166,7 +166,7 @@ const realProjects: Project[] = [
     descriptionEn: 'A complete clinic management system with appointment scheduling and electronic patient records.',
     featuresAr: ['جدولة مواعيد ذكية', 'ملفات المرضى الإلكترونية', 'الفوترة والمدفوعات', 'تقارير طبية', 'إشعارات SMS'],
     featuresEn: ['Smart Scheduling', 'Electronic Patient Records', 'Billing & Payments', 'Medical Reports', 'SMS Notifications'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Node.js', 'PostgreSQL', 'Twilio'],
   },
   {
     id: 'pharma-hub-system',
