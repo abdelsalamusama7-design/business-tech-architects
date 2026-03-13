@@ -1,3 +1,4 @@
+import { useState, useCallback } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AIChatbot from "@/components/AIChatbot";
+import SplashScreen from "@/components/SplashScreen";
 import HomePage from "@/pages/HomePage";
 import ServicesPage from "@/pages/ServicesPage";
 import IndustriesPage from "@/pages/IndustriesPage";
@@ -27,40 +29,46 @@ import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/industries" element={<IndustriesPage />} />
-              <Route path="/industries/:slug" element={<IndustryDetailPage />} />
-              <Route path="/solutions" element={<SolutionsPage />} />
-              <Route path="/portfolio" element={<PortfolioPage />} />
-              <Route path="/portfolio/:id" element={<ProjectDetailPage />} />
-              <Route path="/demo/:id" element={<DemoPage />} />
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/pricing" element={<PricingPage />} />
-              <Route path="/consultation" element={<ConsultationPage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/admin" element={<AdminDashboard />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <Footer />
-            <WhatsAppButton />
-            <AIChatbot />
-          </BrowserRouter>
-        </TooltipProvider>
-      </LanguageProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const [showSplash, setShowSplash] = useState(true);
+  const handleSplashFinish = useCallback(() => setShowSplash(false), []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <LanguageProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            {showSplash && <SplashScreen onFinish={handleSplashFinish} />}
+            <BrowserRouter>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/industries" element={<IndustriesPage />} />
+                <Route path="/industries/:slug" element={<IndustryDetailPage />} />
+                <Route path="/solutions" element={<SolutionsPage />} />
+                <Route path="/portfolio" element={<PortfolioPage />} />
+                <Route path="/portfolio/:id" element={<ProjectDetailPage />} />
+                <Route path="/demo/:id" element={<DemoPage />} />
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/pricing" element={<PricingPage />} />
+                <Route path="/consultation" element={<ConsultationPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <Footer />
+              <WhatsAppButton />
+              <AIChatbot />
+            </BrowserRouter>
+          </TooltipProvider>
+        </LanguageProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
