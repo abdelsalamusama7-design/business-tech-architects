@@ -192,7 +192,7 @@ const realProjects: Project[] = [
     descriptionEn: 'An advanced POS system for restaurants and cafes with order and table management.',
     featuresAr: ['إدارة الطاولات', 'قائمة طعام رقمية', 'طباعة الفواتير', 'تتبع الطلبات', 'تقارير يومية'],
     featuresEn: ['Table Management', 'Digital Menu', 'Receipt Printing', 'Order Tracking', 'Daily Reports'],
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Node.js', 'PostgreSQL', 'Socket.io'],
   },
   {
     id: 'smart-menu-digital',
