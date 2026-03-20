@@ -26,6 +26,7 @@ import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import AdminDashboard from "@/pages/AdminDashboard";
 import MedicalUploadPage from "@/pages/MedicalUploadPage";
+import PrescriptionPage from "@/pages/PrescriptionPage";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -62,6 +63,7 @@ const App = () => {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/medical-upload" element={<MedicalUploadPage />} />
+                <Route path="/prescription" element={<PrescriptionPage />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <Footer />

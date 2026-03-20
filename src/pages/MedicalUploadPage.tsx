@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Camera, Upload, X, FileImage, ZoomIn, ZoomOut, RotateCw, Trash2, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Camera, Upload, X, FileImage, ZoomIn, ZoomOut, RotateCw, Trash2, CheckCircle2, AlertCircle, Printer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface UploadedFile {
@@ -53,6 +53,26 @@ const MedicalUploadPage = () => {
     setSelectedFile(file);
     setZoom(1);
     setRotation(0);
+  };
+
+  const printFile = (file: UploadedFile) => {
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
+    printWindow.document.write(`
+      <!DOCTYPE html>
+      <html>
+      <head><title>${file.name}</title>
+      <style>
+        body { margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #fff; }
+        img { max-width: 100%; max-height: 100vh; object-fit: contain; }
+        @media print { body { margin: 0; } img { max-width: 100%; } }
+      </style></head>
+      <body><img src="${file.preview}" alt="${file.name}" /></body>
+      </html>
+    `);
+    printWindow.document.close();
+    printWindow.focus();
+    setTimeout(() => printWindow.print(), 300);
   };
 
   const handleDrop = (e: React.DragEvent) => {
@@ -216,8 +236,17 @@ const MedicalUploadPage = () => {
                       />
                     )}
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                      <ZoomIn size={24} className="text-white" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
+                      <ZoomIn size={20} className="text-white" />
+                      {file.file.type !== 'application/pdf' && (
+                        <button
+                          onClick={e => { e.stopPropagation(); printFile(file); }}
+                          className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center transition-colors"
+                          title={t('Print', 'طباعة')}
+                        >
+                          <Printer size={14} className="text-white" />
+                        </button>
+                      )}
                     </div>
                     {/* Delete button */}
                     <button
