@@ -55,6 +55,26 @@ const MedicalUploadPage = () => {
     setRotation(0);
   };
 
+  const printFile = (file: UploadedFile) => {
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
+    printWindow.document.write(`
+      <!DOCTYPE html>
+      <html>
+      <head><title>${file.name}</title>
+      <style>
+        body { margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #fff; }
+        img { max-width: 100%; max-height: 100vh; object-fit: contain; }
+        @media print { body { margin: 0; } img { max-width: 100%; } }
+      </style></head>
+      <body><img src="${file.preview}" alt="${file.name}" /></body>
+      </html>
+    `);
+    printWindow.document.close();
+    printWindow.focus();
+    setTimeout(() => printWindow.print(), 300);
+  };
+
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setDragOver(false);
