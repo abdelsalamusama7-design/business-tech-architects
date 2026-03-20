@@ -216,8 +216,17 @@ const MedicalUploadPage = () => {
                       />
                     )}
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                      <ZoomIn size={24} className="text-white" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
+                      <ZoomIn size={20} className="text-white" />
+                      {file.file.type !== 'application/pdf' && (
+                        <button
+                          onClick={e => { e.stopPropagation(); printFile(file); }}
+                          className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center transition-colors"
+                          title={t('Print', 'طباعة')}
+                        >
+                          <Printer size={14} className="text-white" />
+                        </button>
+                      )}
                     </div>
                     {/* Delete button */}
                     <button
