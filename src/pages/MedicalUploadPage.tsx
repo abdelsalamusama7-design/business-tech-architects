@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Camera, Upload, X, FileImage, ZoomIn, ZoomOut, RotateCw, Trash2, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Camera, Upload, X, FileImage, ZoomIn, ZoomOut, RotateCw, Trash2, CheckCircle2, AlertCircle, Printer } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface UploadedFile {
