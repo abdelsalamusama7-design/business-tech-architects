@@ -25,8 +25,6 @@ import ConsultationPage from "@/pages/ConsultationPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import AdminDashboard from "@/pages/AdminDashboard";
-import MedicalUploadPage from "@/pages/MedicalUploadPage";
-import PrescriptionPage from "@/pages/PrescriptionPage";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
