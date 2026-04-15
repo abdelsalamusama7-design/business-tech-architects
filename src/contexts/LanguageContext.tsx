@@ -40,6 +40,9 @@ const translations: Record<string, Record<Language, string>> = {
   'services.ai': { ar: 'أنظمة الأتمتة بالذكاء الاصطناعي', en: 'AI Automation Systems' },
   'services.ecommerce': { ar: 'منصات التجارة الإلكترونية', en: 'E-commerce Platforms' },
   'services.business': { ar: 'أنظمة إدارة الأعمال', en: 'Business Management Systems' },
+  'services.online_store': { ar: 'متاجر أونلاين (شوبيفاي)', en: 'Online Stores (Shopify)' },
+  'services.social_pages': { ar: 'بيع صفحات السوشيال وزيادة المتابعين', en: 'Social Pages & Follower Growth' },
+  'services.social_management': { ar: 'إدارة السوشيال ميديا', en: 'Social Media Management' },
 
   // Industries
   'industries.title': { ar: 'القطاعات التي نخدمها', en: 'Industries We Serve' },
