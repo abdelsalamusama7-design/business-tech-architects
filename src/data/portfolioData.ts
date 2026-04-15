@@ -22,6 +22,9 @@ import hotelBooking from '@/assets/portfolio/hotel-booking.jpg';
 import eventPlatform from '@/assets/portfolio/event-platform.jpg';
 import retailPos from '@/assets/portfolio/retail-pos.jpg';
 import hospitalPlatform from '@/assets/portfolio/hospital-platform.jpg';
+import onlineStore from '@/assets/portfolio/online-store.jpg';
+import socialPagesStore from '@/assets/portfolio/social-pages-store.jpg';
+import socialMediaMgmt from '@/assets/portfolio/social-media-mgmt.jpg';
 
 export const categories = [
   { ar: 'الكل', en: 'All' },
@@ -47,6 +50,9 @@ export const categories = [
   { ar: 'نظام إدارة صالات رياضية', en: 'Gym Management' },    // 20
   { ar: 'منصة حجز فنادق', en: 'Hotel Booking' },             // 21
   { ar: 'منصة فعاليات', en: 'Event Platform' },               // 22
+  { ar: 'متجر أونلاين', en: 'Online Store' },                  // 23
+  { ar: 'متجر صفحات سوشيال', en: 'Social Pages Store' },      // 24
+  { ar: 'إدارة سوشيال ميديا', en: 'Social Media Management' }, // 25
 ];
 
 // Each category has its own unique screenshot
@@ -73,6 +79,9 @@ const categoryImages: Record<number, string> = {
   20: gymManagement,
   21: hotelBooking,
   22: eventPlatform,
+  23: onlineStore,
+  24: socialPagesStore,
+  25: socialMediaMgmt,
 };
 
 export interface Project {
