@@ -616,6 +616,21 @@ export function getQuickActions(cat: string) {
       { icon: MapPin, label: 'Plan Route', desc: 'Optimize delivery' },
       { icon: FileText, label: 'Generate BOL', desc: 'Bill of lading' },
     ],
+    'Online Store': [
+      { icon: Package, label: 'Add Product', desc: 'List new product' },
+      { icon: ShoppingCart, label: 'View Orders', desc: 'Manage orders' },
+      { icon: CreditCard, label: 'Refund', desc: 'Process refund' },
+    ],
+    'Social Pages Store': [
+      { icon: Share2, label: 'List Page', desc: 'Add page for sale' },
+      { icon: Users, label: 'Verify Seller', desc: 'Approve seller' },
+      { icon: Shield, label: 'Escrow Release', desc: 'Release payment' },
+    ],
+    'Social Media Management': [
+      { icon: Calendar, label: 'Schedule Post', desc: 'Plan content' },
+      { icon: BarChart3, label: 'View Analytics', desc: 'Performance report' },
+      { icon: Users, label: 'Add Account', desc: 'Connect account' },
+    ],
   };
   return map[cat] || [
     { icon: FileText, label: 'New Record', desc: 'Create new entry' },
