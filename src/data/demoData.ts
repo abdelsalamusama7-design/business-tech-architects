@@ -3,6 +3,7 @@ import {
   FileText, Bell, Search, Menu, Star, Clock, MapPin, CreditCard,
   Shield, Wifi, Heart, Truck, BookOpen, Dumbbell, Hotel, Ticket,
   Monitor, Activity, Pill, Building, GraduationCap, Warehouse,
+  Store, Share2, TrendingUp,
   type LucideIcon
 } from 'lucide-react';
 
@@ -141,6 +142,27 @@ export const categoryThemes: Record<string, DemoCategoryConfig> = {
     heroTitle: { en: 'Logistics Platform', ar: 'المنصة اللوجستية' },
     heroDesc: { en: 'Shipments, routes, fleet & warehouse ops', ar: 'الشحنات والمسارات والأسطول وعمليات المستودع' },
   },
+  'Online Store': {
+    color: 'from-purple-500 to-fuchsia-600',
+    accentColor: 'bg-purple-600/20 text-purple-400',
+    icon: Store,
+    heroTitle: { en: 'Online Store', ar: 'المتجر الإلكتروني' },
+    heroDesc: { en: 'Products, orders, payments & shipping', ar: 'المنتجات والطلبات والمدفوعات والشحن' },
+  },
+  'Social Pages Store': {
+    color: 'from-blue-500 to-indigo-600',
+    accentColor: 'bg-blue-500/20 text-blue-400',
+    icon: Share2,
+    heroTitle: { en: 'Social Pages Store', ar: 'متجر صفحات السوشيال' },
+    heroDesc: { en: 'Buy & sell social media pages and boost followers', ar: 'بيع وشراء صفحات السوشيال وزيادة المتابعين' },
+  },
+  'Social Media Management': {
+    color: 'from-violet-500 to-purple-600',
+    accentColor: 'bg-violet-500/20 text-violet-400',
+    icon: TrendingUp,
+    heroTitle: { en: 'Social Media Management', ar: 'إدارة السوشيال ميديا' },
+    heroDesc: { en: 'Schedule posts, analyze performance & grow audience', ar: 'جدولة المنشورات وتحليل الأداء ونمو الجمهور' },
+  },
 };
 
 // Sidebar items per category
@@ -168,6 +190,9 @@ export function getSidebarItems(cat: string) {
     'Event Platform': [{ icon: Ticket, label: 'Events' }, { icon: Users, label: 'Attendees' }, { icon: MapPin, label: 'Venues' }, { icon: CreditCard, label: 'Tickets' }, { icon: Calendar, label: 'Schedule' }],
     'Retail POS': [{ icon: ShoppingCart, label: 'Sales' }, { icon: Package, label: 'Products' }, { icon: Users, label: 'Customers' }, { icon: CreditCard, label: 'Payments' }, { icon: FileText, label: 'Returns' }],
     'Logistics Platform': [{ icon: Truck, label: 'Shipments' }, { icon: MapPin, label: 'Routes' }, { icon: Package, label: 'Fleet' }, { icon: Warehouse, label: 'Warehouses' }, { icon: FileText, label: 'Documents' }],
+    'Online Store': [{ icon: Package, label: 'Products' }, { icon: ShoppingCart, label: 'Orders' }, { icon: CreditCard, label: 'Payments' }, { icon: Truck, label: 'Shipping' }, { icon: Star, label: 'Reviews' }],
+    'Social Pages Store': [{ icon: Share2, label: 'Pages' }, { icon: Users, label: 'Sellers' }, { icon: TrendingUp, label: 'Followers' }, { icon: CreditCard, label: 'Transactions' }, { icon: Shield, label: 'Escrow' }],
+    'Social Media Management': [{ icon: Calendar, label: 'Schedule' }, { icon: FileText, label: 'Content' }, { icon: TrendingUp, label: 'Growth' }, { icon: Users, label: 'Accounts' }, { icon: BarChart3, label: 'Reports' }],
   };
   const extra = map[cat] || [{ icon: Package, label: 'Items' }, { icon: Users, label: 'Users' }, { icon: FileText, label: 'Reports' }];
   return [...base, ...extra, { icon: Settings, label: 'Settings' }];
