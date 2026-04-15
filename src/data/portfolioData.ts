@@ -22,6 +22,9 @@ import hotelBooking from '@/assets/portfolio/hotel-booking.jpg';
 import eventPlatform from '@/assets/portfolio/event-platform.jpg';
 import retailPos from '@/assets/portfolio/retail-pos.jpg';
 import hospitalPlatform from '@/assets/portfolio/hospital-platform.jpg';
+import onlineStore from '@/assets/portfolio/online-store.jpg';
+import socialPagesStore from '@/assets/portfolio/social-pages-store.jpg';
+import socialMediaMgmt from '@/assets/portfolio/social-media-mgmt.jpg';
 
 export const categories = [
   { ar: 'الكل', en: 'All' },
@@ -47,6 +50,9 @@ export const categories = [
   { ar: 'نظام إدارة صالات رياضية', en: 'Gym Management' },    // 20
   { ar: 'منصة حجز فنادق', en: 'Hotel Booking' },             // 21
   { ar: 'منصة فعاليات', en: 'Event Platform' },               // 22
+  { ar: 'متجر أونلاين', en: 'Online Store' },                  // 23
+  { ar: 'متجر صفحات سوشيال', en: 'Social Pages Store' },      // 24
+  { ar: 'إدارة سوشيال ميديا', en: 'Social Media Management' }, // 25
 ];
 
 // Each category has its own unique screenshot
@@ -73,6 +79,9 @@ const categoryImages: Record<number, string> = {
   20: gymManagement,
   21: hotelBooking,
   22: eventPlatform,
+  23: onlineStore,
+  24: socialPagesStore,
+  25: socialMediaMgmt,
 };
 
 export interface Project {
@@ -388,6 +397,84 @@ const realProjects: Project[] = [
     featuresAr: ['نقطة بيع سريعة', 'إدارة المخزون', 'باركود سكانر', 'تقارير المبيعات', 'إدارة الموظفين'],
     featuresEn: ['Fast POS', 'Inventory Management', 'Barcode Scanner', 'Sales Reports', 'Staff Management'],
     techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Barcode API'],
+  },
+  {
+    id: 'shopify-store-pro',
+    title: 'Shopify Store Pro',
+    titleAr: 'متجر شوبيفاي الاحترافي',
+    url: 'https://shopify-store-pro.lovable.app',
+    catIndex: 23,
+    image: onlineStore,
+    descriptionAr: 'متجر إلكتروني متكامل على شوبيفاي مع إدارة المنتجات والطلبات والشحن وبوابات الدفع.',
+    descriptionEn: 'A complete Shopify online store with product, order, shipping management and payment gateways.',
+    featuresAr: ['إدارة المنتجات', 'سلة تسوق ذكية', 'بوابات دفع متعددة', 'تتبع الشحنات', 'كوبونات وخصومات', 'تقارير المبيعات'],
+    featuresEn: ['Product Management', 'Smart Cart', 'Multiple Payment Gateways', 'Shipment Tracking', 'Coupons & Discounts', 'Sales Reports'],
+    techStack: ['Shopify', 'Liquid', 'React', 'Node.js', 'Stripe', 'REST API', 'Cloudinary'],
+  },
+  {
+    id: 'ecom-starter-kit',
+    title: 'E-Commerce Starter Kit',
+    titleAr: 'متجر إلكتروني متكامل',
+    url: 'https://ecom-starter-kit.lovable.app',
+    catIndex: 23,
+    image: onlineStore,
+    descriptionAr: 'متجر أونلاين جاهز للبيع مع واجهة مستخدم عصرية وتكامل مع أنظمة الدفع والشحن.',
+    descriptionEn: 'A ready-to-sell online store with modern UI and payment/shipping integrations.',
+    featuresAr: ['تصميم متجاوب', 'عرض المنتجات بالصور', 'فلترة وبحث متقدم', 'مراجعات العملاء', 'دعم متعدد العملات'],
+    featuresEn: ['Responsive Design', 'Product Image Gallery', 'Advanced Filter & Search', 'Customer Reviews', 'Multi-currency Support'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Stripe', 'Node.js', 'PostgreSQL'],
+  },
+  {
+    id: 'social-pages-market',
+    title: 'Social Pages Marketplace',
+    titleAr: 'سوق بيع صفحات السوشيال ميديا',
+    url: 'https://social-pages-market.lovable.app',
+    catIndex: 24,
+    image: socialPagesStore,
+    descriptionAr: 'منصة لبيع وشراء صفحات وحسابات السوشيال ميديا مع نظام تقييم وضمان آمن.',
+    descriptionEn: 'A marketplace for buying and selling social media pages and accounts with rating and escrow system.',
+    featuresAr: ['عرض الصفحات للبيع', 'نظام تقييم البائعين', 'ضمان الدفع الآمن', 'إحصائيات المتابعين', 'دعم جميع المنصات'],
+    featuresEn: ['Pages Listing', 'Seller Rating System', 'Secure Escrow Payment', 'Follower Analytics', 'All Platforms Support'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Stripe'],
+  },
+  {
+    id: 'follower-boost-platform',
+    title: 'Follower Boost Platform',
+    titleAr: 'منصة زيادة المتابعين',
+    url: 'https://follower-boost-platform.lovable.app',
+    catIndex: 24,
+    image: socialPagesStore,
+    descriptionAr: 'منصة متكاملة لزيادة المتابعين والتفاعل على جميع منصات السوشيال ميديا بطرق آمنة.',
+    descriptionEn: 'A complete platform for boosting followers and engagement across all social media platforms safely.',
+    featuresAr: ['باقات متابعين متنوعة', 'زيادة اللايكات والتعليقات', 'لوحة تحكم العميل', 'دعم انستجرام وفيسبوك وتيكتوك', 'تقارير النمو'],
+    featuresEn: ['Various Follower Packages', 'Likes & Comments Boost', 'Client Dashboard', 'Instagram, Facebook & TikTok', 'Growth Reports'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Node.js', 'PostgreSQL', 'REST API', 'Stripe'],
+  },
+  {
+    id: 'social-media-manager',
+    title: 'Social Media Manager',
+    titleAr: 'منصة إدارة السوشيال ميديا',
+    url: 'https://social-media-manager.lovable.app',
+    catIndex: 25,
+    image: socialMediaMgmt,
+    descriptionAr: 'منصة شاملة لإدارة حسابات السوشيال ميديا وجدولة المنشورات وتحليل الأداء.',
+    descriptionEn: 'A comprehensive platform for managing social media accounts, scheduling posts, and analyzing performance.',
+    featuresAr: ['جدولة المنشورات', 'تحليل الأداء', 'تقويم المحتوى', 'ردود تلقائية', 'تقارير شهرية', 'دعم جميع المنصات'],
+    featuresEn: ['Post Scheduling', 'Performance Analytics', 'Content Calendar', 'Auto Replies', 'Monthly Reports', 'All Platforms Support'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Node.js', 'PostgreSQL', 'Meta API', 'OpenAI', 'Recharts'],
+  },
+  {
+    id: 'content-creator-hub',
+    title: 'Content Creator Hub',
+    titleAr: 'منصة صناعة المحتوى',
+    url: 'https://content-creator-hub.lovable.app',
+    catIndex: 25,
+    image: socialMediaMgmt,
+    descriptionAr: 'أداة متكاملة لصناع المحتوى لإدارة الحملات وتتبع نمو المتابعين وإنشاء تقارير احترافية.',
+    descriptionEn: 'An all-in-one tool for content creators to manage campaigns, track follower growth, and generate professional reports.',
+    featuresAr: ['إدارة الحملات', 'تتبع نمو المتابعين', 'تحليلات متقدمة', 'إنشاء محتوى بالذكاء الاصطناعي', 'تقارير للعملاء'],
+    featuresEn: ['Campaign Management', 'Follower Growth Tracking', 'Advanced Analytics', 'AI Content Generation', 'Client Reports'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'OpenAI', 'Recharts', 'Node.js', 'PostgreSQL', 'Cloudinary'],
   },
 ];
 

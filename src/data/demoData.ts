@@ -3,6 +3,7 @@ import {
   FileText, Bell, Search, Menu, Star, Clock, MapPin, CreditCard,
   Shield, Wifi, Heart, Truck, BookOpen, Dumbbell, Hotel, Ticket,
   Monitor, Activity, Pill, Building, GraduationCap, Warehouse,
+  Store, Share2, TrendingUp,
   type LucideIcon
 } from 'lucide-react';
 
@@ -141,6 +142,27 @@ export const categoryThemes: Record<string, DemoCategoryConfig> = {
     heroTitle: { en: 'Logistics Platform', ar: 'المنصة اللوجستية' },
     heroDesc: { en: 'Shipments, routes, fleet & warehouse ops', ar: 'الشحنات والمسارات والأسطول وعمليات المستودع' },
   },
+  'Online Store': {
+    color: 'from-purple-500 to-fuchsia-600',
+    accentColor: 'bg-purple-600/20 text-purple-400',
+    icon: Store,
+    heroTitle: { en: 'Online Store', ar: 'المتجر الإلكتروني' },
+    heroDesc: { en: 'Products, orders, payments & shipping', ar: 'المنتجات والطلبات والمدفوعات والشحن' },
+  },
+  'Social Pages Store': {
+    color: 'from-blue-500 to-indigo-600',
+    accentColor: 'bg-blue-500/20 text-blue-400',
+    icon: Share2,
+    heroTitle: { en: 'Social Pages Store', ar: 'متجر صفحات السوشيال' },
+    heroDesc: { en: 'Buy & sell social media pages and boost followers', ar: 'بيع وشراء صفحات السوشيال وزيادة المتابعين' },
+  },
+  'Social Media Management': {
+    color: 'from-violet-500 to-purple-600',
+    accentColor: 'bg-violet-500/20 text-violet-400',
+    icon: TrendingUp,
+    heroTitle: { en: 'Social Media Management', ar: 'إدارة السوشيال ميديا' },
+    heroDesc: { en: 'Schedule posts, analyze performance & grow audience', ar: 'جدولة المنشورات وتحليل الأداء ونمو الجمهور' },
+  },
 };
 
 // Sidebar items per category
@@ -168,6 +190,9 @@ export function getSidebarItems(cat: string) {
     'Event Platform': [{ icon: Ticket, label: 'Events' }, { icon: Users, label: 'Attendees' }, { icon: MapPin, label: 'Venues' }, { icon: CreditCard, label: 'Tickets' }, { icon: Calendar, label: 'Schedule' }],
     'Retail POS': [{ icon: ShoppingCart, label: 'Sales' }, { icon: Package, label: 'Products' }, { icon: Users, label: 'Customers' }, { icon: CreditCard, label: 'Payments' }, { icon: FileText, label: 'Returns' }],
     'Logistics Platform': [{ icon: Truck, label: 'Shipments' }, { icon: MapPin, label: 'Routes' }, { icon: Package, label: 'Fleet' }, { icon: Warehouse, label: 'Warehouses' }, { icon: FileText, label: 'Documents' }],
+    'Online Store': [{ icon: Package, label: 'Products' }, { icon: ShoppingCart, label: 'Orders' }, { icon: CreditCard, label: 'Payments' }, { icon: Truck, label: 'Shipping' }, { icon: Star, label: 'Reviews' }],
+    'Social Pages Store': [{ icon: Share2, label: 'Pages' }, { icon: Users, label: 'Sellers' }, { icon: TrendingUp, label: 'Followers' }, { icon: CreditCard, label: 'Transactions' }, { icon: Shield, label: 'Escrow' }],
+    'Social Media Management': [{ icon: Calendar, label: 'Schedule' }, { icon: FileText, label: 'Content' }, { icon: TrendingUp, label: 'Growth' }, { icon: Users, label: 'Accounts' }, { icon: BarChart3, label: 'Reports' }],
   };
   const extra = map[cat] || [{ icon: Package, label: 'Items' }, { icon: Users, label: 'Users' }, { icon: FileText, label: 'Reports' }];
   return [...base, ...extra, { icon: Settings, label: 'Settings' }];
@@ -284,6 +309,24 @@ export function getStats(cat: string) {
       { label: 'Fleet Size', value: '48', change: 6, icon: Package },
       { label: 'Revenue', value: '$124K', change: 11, icon: BarChart3 },
     ],
+    'Online Store': [
+      { label: 'Total Products', value: '1,245', change: 8, icon: Package },
+      { label: 'Orders Today', value: '89', change: 22, icon: ShoppingCart },
+      { label: 'Revenue', value: '$32.4K', change: 18, icon: BarChart3 },
+      { label: 'Conversion Rate', value: '3.8%', change: 5, icon: TrendingUp },
+    ],
+    'Social Pages Store': [
+      { label: 'Pages Listed', value: '456', change: 15, icon: Share2 },
+      { label: 'Active Sellers', value: '123', change: 10, icon: Users },
+      { label: 'Transactions', value: '$67K', change: 25, icon: CreditCard },
+      { label: 'Avg Rating', value: '4.6', change: 3, icon: Star },
+    ],
+    'Social Media Management': [
+      { label: 'Managed Accounts', value: '89', change: 12, icon: Users },
+      { label: 'Scheduled Posts', value: '234', change: 18, icon: Calendar },
+      { label: 'Total Followers', value: '2.4M', change: 8, icon: TrendingUp },
+      { label: 'Engagement Rate', value: '5.2%', change: 4, icon: Star },
+    ],
   };
   return map[cat] || [
     { label: 'Total Users', value: '1,234', change: 12, icon: Users },
@@ -314,6 +357,9 @@ export function getTableHeaders(cat: string) {
     'Event Platform': ['#', 'Event', 'Venue', 'Tickets', 'Status'],
     'Retail POS': ['#', 'Transaction', 'Items', 'Total', 'Payment'],
     'Logistics Platform': ['#', 'Shipment', 'Origin', 'Destination', 'Status'],
+    'Online Store': ['#', 'Product', 'Price', 'Stock', 'Status'],
+    'Social Pages Store': ['#', 'Page', 'Platform', 'Followers', 'Price'],
+    'Social Media Management': ['#', 'Account', 'Platform', 'Followers', 'Engagement'],
   };
   return map[cat] || ['ID', 'Name', 'Type', 'Date', 'Status'];
 }
@@ -447,6 +493,27 @@ export function getTableRows(cat: string) {
       ['#L04', 'SHP-2338', 'Jeddah', 'Dammam', '🟢 In Transit'],
       ['#L05', 'SHP-2337', 'Cairo', 'Aswan', '⏳ Scheduled'],
     ],
+    'Online Store': [
+      ['#S01', 'iPhone 15 Pro Max', '$1,199', '45', '✅ In Stock'],
+      ['#S02', 'MacBook Air M3', '$1,299', '23', '✅ In Stock'],
+      ['#S03', 'AirPods Pro 2', '$249', '0', '❌ Out of Stock'],
+      ['#S04', 'iPad Air', '$599', '12', '🟡 Low Stock'],
+      ['#S05', 'Apple Watch Ultra', '$799', '34', '✅ In Stock'],
+    ],
+    'Social Pages Store': [
+      ['#SP01', 'Fashion Lifestyle', 'Instagram', '245K', '$2,500'],
+      ['#SP02', 'Tech Reviews', 'TikTok', '890K', '$8,900'],
+      ['#SP03', 'Food & Recipes', 'Facebook', '120K', '$1,200'],
+      ['#SP04', 'Travel Blog', 'Instagram', '567K', '$5,670'],
+      ['#SP05', 'Gaming Channel', 'TikTok', '1.2M', '$15,000'],
+    ],
+    'Social Media Management': [
+      ['#SM01', '@brand_fashion', 'Instagram', '125K', '6.2%'],
+      ['#SM02', '@tech_daily', 'Twitter', '89K', '4.8%'],
+      ['#SM03', '@food_lovers', 'TikTok', '456K', '8.1%'],
+      ['#SM04', '@travel_world', 'Facebook', '234K', '3.5%'],
+      ['#SM05', '@fitness_pro', 'Instagram', '78K', '7.3%'],
+    ],
   };
   return map[cat] || [
     ['#001', 'Item Alpha', 'Type A', '2026-03-13', '✅ Active'],
@@ -548,6 +615,21 @@ export function getQuickActions(cat: string) {
       { icon: Truck, label: 'New Shipment', desc: 'Create shipment' },
       { icon: MapPin, label: 'Plan Route', desc: 'Optimize delivery' },
       { icon: FileText, label: 'Generate BOL', desc: 'Bill of lading' },
+    ],
+    'Online Store': [
+      { icon: Package, label: 'Add Product', desc: 'List new product' },
+      { icon: ShoppingCart, label: 'View Orders', desc: 'Manage orders' },
+      { icon: CreditCard, label: 'Refund', desc: 'Process refund' },
+    ],
+    'Social Pages Store': [
+      { icon: Share2, label: 'List Page', desc: 'Add page for sale' },
+      { icon: Users, label: 'Verify Seller', desc: 'Approve seller' },
+      { icon: Shield, label: 'Escrow Release', desc: 'Release payment' },
+    ],
+    'Social Media Management': [
+      { icon: Calendar, label: 'Schedule Post', desc: 'Plan content' },
+      { icon: BarChart3, label: 'View Analytics', desc: 'Performance report' },
+      { icon: Users, label: 'Add Account', desc: 'Connect account' },
     ],
   };
   return map[cat] || [
