@@ -357,6 +357,9 @@ export function getTableHeaders(cat: string) {
     'Event Platform': ['#', 'Event', 'Venue', 'Tickets', 'Status'],
     'Retail POS': ['#', 'Transaction', 'Items', 'Total', 'Payment'],
     'Logistics Platform': ['#', 'Shipment', 'Origin', 'Destination', 'Status'],
+    'Online Store': ['#', 'Product', 'Price', 'Stock', 'Status'],
+    'Social Pages Store': ['#', 'Page', 'Platform', 'Followers', 'Price'],
+    'Social Media Management': ['#', 'Account', 'Platform', 'Followers', 'Engagement'],
   };
   return map[cat] || ['ID', 'Name', 'Type', 'Date', 'Status'];
 }
