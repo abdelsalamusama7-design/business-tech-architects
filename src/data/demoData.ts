@@ -309,6 +309,24 @@ export function getStats(cat: string) {
       { label: 'Fleet Size', value: '48', change: 6, icon: Package },
       { label: 'Revenue', value: '$124K', change: 11, icon: BarChart3 },
     ],
+    'Online Store': [
+      { label: 'Total Products', value: '1,245', change: 8, icon: Package },
+      { label: 'Orders Today', value: '89', change: 22, icon: ShoppingCart },
+      { label: 'Revenue', value: '$32.4K', change: 18, icon: BarChart3 },
+      { label: 'Conversion Rate', value: '3.8%', change: 5, icon: TrendingUp },
+    ],
+    'Social Pages Store': [
+      { label: 'Pages Listed', value: '456', change: 15, icon: Share2 },
+      { label: 'Active Sellers', value: '123', change: 10, icon: Users },
+      { label: 'Transactions', value: '$67K', change: 25, icon: CreditCard },
+      { label: 'Avg Rating', value: '4.6', change: 3, icon: Star },
+    ],
+    'Social Media Management': [
+      { label: 'Managed Accounts', value: '89', change: 12, icon: Users },
+      { label: 'Scheduled Posts', value: '234', change: 18, icon: Calendar },
+      { label: 'Total Followers', value: '2.4M', change: 8, icon: TrendingUp },
+      { label: 'Engagement Rate', value: '5.2%', change: 4, icon: Star },
+    ],
   };
   return map[cat] || [
     { label: 'Total Users', value: '1,234', change: 12, icon: Users },
