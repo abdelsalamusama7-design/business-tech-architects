@@ -1,6 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { Code, Smartphone, Brain, ShoppingCart, Building2, Stethoscope, UtensilsCrossed, Pill, Cog } from 'lucide-react';
+import { Code, Smartphone, Brain, ShoppingCart, Building2, Stethoscope, UtensilsCrossed, Pill, Cog, Store, Share2, TrendingUp } from 'lucide-react';
 
 const services = [
   {
@@ -56,6 +56,24 @@ const services = [
     key: 'services.business',
     descAr: 'أنظمة ERP وCRM لإدارة الموارد والعملاء بكفاءة عالية.',
     descEn: 'ERP and CRM systems for efficient resource and customer management.',
+  },
+  {
+    icon: Store,
+    key: 'services.online_store',
+    descAr: 'متاجر أونلاين احترافية على شوبيفاي وغيرها مع إدارة المنتجات والطلبات والشحن وبوابات الدفع.',
+    descEn: 'Professional online stores on Shopify and other platforms with product, order, shipping management and payment gateways.',
+  },
+  {
+    icon: Share2,
+    key: 'services.social_pages',
+    descAr: 'منصات بيع وشراء صفحات السوشيال ميديا وخدمات زيادة المتابعين والتفاعل على جميع المنصات.',
+    descEn: 'Platforms for buying and selling social media pages and follower/engagement boosting services across all platforms.',
+  },
+  {
+    icon: TrendingUp,
+    key: 'services.social_management',
+    descAr: 'إدارة حسابات السوشيال ميديا وجدولة المنشورات وتحليل الأداء وإنشاء المحتوى بالذكاء الاصطناعي.',
+    descEn: 'Social media account management, post scheduling, performance analytics, and AI-powered content creation.',
   },
 ];
 
