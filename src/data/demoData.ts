@@ -493,6 +493,27 @@ export function getTableRows(cat: string) {
       ['#L04', 'SHP-2338', 'Jeddah', 'Dammam', '🟢 In Transit'],
       ['#L05', 'SHP-2337', 'Cairo', 'Aswan', '⏳ Scheduled'],
     ],
+    'Online Store': [
+      ['#S01', 'iPhone 15 Pro Max', '$1,199', '45', '✅ In Stock'],
+      ['#S02', 'MacBook Air M3', '$1,299', '23', '✅ In Stock'],
+      ['#S03', 'AirPods Pro 2', '$249', '0', '❌ Out of Stock'],
+      ['#S04', 'iPad Air', '$599', '12', '🟡 Low Stock'],
+      ['#S05', 'Apple Watch Ultra', '$799', '34', '✅ In Stock'],
+    ],
+    'Social Pages Store': [
+      ['#SP01', 'Fashion Lifestyle', 'Instagram', '245K', '$2,500'],
+      ['#SP02', 'Tech Reviews', 'TikTok', '890K', '$8,900'],
+      ['#SP03', 'Food & Recipes', 'Facebook', '120K', '$1,200'],
+      ['#SP04', 'Travel Blog', 'Instagram', '567K', '$5,670'],
+      ['#SP05', 'Gaming Channel', 'TikTok', '1.2M', '$15,000'],
+    ],
+    'Social Media Management': [
+      ['#SM01', '@brand_fashion', 'Instagram', '125K', '6.2%'],
+      ['#SM02', '@tech_daily', 'Twitter', '89K', '4.8%'],
+      ['#SM03', '@food_lovers', 'TikTok', '456K', '8.1%'],
+      ['#SM04', '@travel_world', 'Facebook', '234K', '3.5%'],
+      ['#SM05', '@fitness_pro', 'Instagram', '78K', '7.3%'],
+    ],
   };
   return map[cat] || [
     ['#001', 'Item Alpha', 'Type A', '2026-03-13', '✅ Active'],
