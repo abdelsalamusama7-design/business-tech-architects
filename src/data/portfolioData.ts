@@ -23,8 +23,14 @@ import eventPlatform from '@/assets/portfolio/event-platform.jpg';
 import retailPos from '@/assets/portfolio/retail-pos.jpg';
 import hospitalPlatform from '@/assets/portfolio/hospital-platform.jpg';
 import onlineStore from '@/assets/portfolio/online-store.jpg';
+import onlineStore2 from '@/assets/portfolio/online-store-2.jpg';
+import onlineStore3 from '@/assets/portfolio/online-store-3.jpg';
 import socialPagesStore from '@/assets/portfolio/social-pages-store.jpg';
+import socialPagesStore2 from '@/assets/portfolio/social-pages-2.jpg';
+import socialPagesStore3 from '@/assets/portfolio/social-pages-3.jpg';
 import socialMediaMgmt from '@/assets/portfolio/social-media-mgmt.jpg';
+import socialMediaMgmt2 from '@/assets/portfolio/social-media-mgmt-2.jpg';
+import socialMediaMgmt3 from '@/assets/portfolio/social-media-mgmt-3.jpg';
 
 export const categories = [
   { ar: 'الكل', en: 'All' },
@@ -475,6 +481,84 @@ const realProjects: Project[] = [
     featuresAr: ['إدارة الحملات', 'تتبع نمو المتابعين', 'تحليلات متقدمة', 'إنشاء محتوى بالذكاء الاصطناعي', 'تقارير للعملاء'],
     featuresEn: ['Campaign Management', 'Follower Growth Tracking', 'Advanced Analytics', 'AI Content Generation', 'Client Reports'],
     techStack: ['React', 'TypeScript', 'Supabase', 'OpenAI', 'Recharts', 'Node.js', 'PostgreSQL', 'Cloudinary'],
+  },
+  {
+    id: 'fashion-ecom-hub',
+    title: 'Fashion E-Commerce Hub',
+    titleAr: 'مركز الموضة الإلكتروني',
+    url: 'https://fashion-ecom-hub.lovable.app',
+    catIndex: 23,
+    image: onlineStore2,
+    descriptionAr: 'متجر أونلاين متخصص في الأزياء والموضة بتصميم عصري وتجربة تسوق سلسة مع فلاتر ذكية.',
+    descriptionEn: 'An online fashion and apparel store with a modern design, smooth shopping experience, and smart filters.',
+    featuresAr: ['كتالوج أزياء متقدم', 'فلترة بالمقاس واللون', 'عربة تسوق ذكية', 'مراجعات بالصور', 'إشعارات العروض'],
+    featuresEn: ['Advanced Fashion Catalog', 'Size & Color Filters', 'Smart Shopping Cart', 'Photo Reviews', 'Deal Notifications'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Shopify API', 'Stripe', 'Node.js', 'Cloudinary'],
+  },
+  {
+    id: 'gadget-store-pro',
+    title: 'Gadget Store Pro',
+    titleAr: 'متجر الأجهزة الاحترافي',
+    url: 'https://gadget-store-pro.lovable.app',
+    catIndex: 23,
+    image: onlineStore3,
+    descriptionAr: 'متجر إلكتروني متخصص في بيع الأجهزة الإلكترونية والاكسسوارات التقنية مع مقارنة منتجات تفاعلية.',
+    descriptionEn: 'An online store specializing in electronics and tech accessories with interactive product comparisons.',
+    featuresAr: ['مقارنة منتجات تفاعلية', 'مواصفات تقنية مفصلة', 'نظام تقييم ذكي', 'عروض لحظية', 'دعم الدفع بالأقساط'],
+    featuresEn: ['Interactive Product Comparison', 'Detailed Tech Specs', 'Smart Rating System', 'Flash Deals', 'Installment Payment Support'],
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Stripe', 'Node.js', 'PostgreSQL'],
+  },
+  {
+    id: 'viral-page-market',
+    title: 'Viral Page Marketplace',
+    titleAr: 'سوق الصفحات الفيروسية',
+    url: 'https://viral-page-market.lovable.app',
+    catIndex: 24,
+    image: socialPagesStore2,
+    descriptionAr: 'منصة متخصصة لبيع وشراء الصفحات الفيروسية والحسابات ذات الجمهور الكبير على مختلف المنصات.',
+    descriptionEn: 'A specialized marketplace for buying and selling viral pages and high-follower accounts across various platforms.',
+    featuresAr: ['تصنيف حسب المنصة', 'تحليل الجمهور', 'ضمان التسليم', 'نظام مزادات', 'تقييمات موثوقة'],
+    featuresEn: ['Platform-based Categorization', 'Audience Analytics', 'Delivery Guarantee', 'Auction System', 'Trusted Reviews'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Stripe Connect'],
+  },
+  {
+    id: 'influencer-deals-hub',
+    title: 'Influencer Deals Hub',
+    titleAr: 'مركز صفقات المؤثرين',
+    url: 'https://influencer-deals-hub.lovable.app',
+    catIndex: 24,
+    image: socialPagesStore3,
+    descriptionAr: 'منصة تربط المؤثرين بالعلامات التجارية مع إدارة الصفقات وتتبع الأداء والمدفوعات.',
+    descriptionEn: 'A platform connecting influencers with brands for deal management, performance tracking, and payments.',
+    featuresAr: ['ربط مؤثر-علامة تجارية', 'إدارة العقود', 'تتبع الأداء', 'مدفوعات آمنة', 'تقارير ROI'],
+    featuresEn: ['Influencer-Brand Matching', 'Contract Management', 'Performance Tracking', 'Secure Payments', 'ROI Reports'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'Recharts', 'Node.js', 'PostgreSQL', 'Stripe'],
+  },
+  {
+    id: 'brand-social-suite',
+    title: 'Brand Social Suite',
+    titleAr: 'حلول إدارة العلامات التجارية',
+    url: 'https://brand-social-suite.lovable.app',
+    catIndex: 25,
+    image: socialMediaMgmt2,
+    descriptionAr: 'منصة شاملة لإدارة حسابات العلامات التجارية على السوشيال ميديا مع جدولة وتقارير وردود آلية.',
+    descriptionEn: 'A comprehensive platform for managing brand social media accounts with scheduling, reports, and automated replies.',
+    featuresAr: ['إدارة حسابات متعددة', 'جدولة ذكية', 'ردود آلية', 'تقارير المنافسين', 'تنبيهات الترند'],
+    featuresEn: ['Multi-Account Management', 'Smart Scheduling', 'Auto Replies', 'Competitor Reports', 'Trend Alerts'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'OpenAI', 'Node.js', 'PostgreSQL', 'Meta API', 'Recharts'],
+  },
+  {
+    id: 'creator-growth-lab',
+    title: 'Creator Growth Lab',
+    titleAr: 'معمل نمو صناع المحتوى',
+    url: 'https://creator-growth-lab.lovable.app',
+    catIndex: 25,
+    image: socialMediaMgmt3,
+    descriptionAr: 'أداة متقدمة لصناع المحتوى لتحليل الأداء وتحسين المحتوى وزيادة التفاعل باستخدام الذكاء الاصطناعي.',
+    descriptionEn: 'An advanced tool for content creators to analyze performance, optimize content, and boost engagement using AI.',
+    featuresAr: ['تحليل المحتوى بالذكاء الاصطناعي', 'اقتراحات أفضل وقت للنشر', 'تحليل المشاعر', 'تقارير نمو أسبوعية', 'دعم الفيديو والصور'],
+    featuresEn: ['AI Content Analysis', 'Best Time to Post Suggestions', 'Sentiment Analysis', 'Weekly Growth Reports', 'Video & Image Support'],
+    techStack: ['React', 'TypeScript', 'Supabase', 'OpenAI', 'Python', 'FastAPI', 'Recharts', 'Cloudinary'],
   },
 ];
 
