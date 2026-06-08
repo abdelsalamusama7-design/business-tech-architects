@@ -23,8 +23,14 @@ import eventPlatform from '@/assets/portfolio/event-platform.jpg';
 import retailPos from '@/assets/portfolio/retail-pos.jpg';
 import hospitalPlatform from '@/assets/portfolio/hospital-platform.jpg';
 import onlineStore from '@/assets/portfolio/online-store.jpg';
+import onlineStore2 from '@/assets/portfolio/online-store-2.jpg';
+import onlineStore3 from '@/assets/portfolio/online-store-3.jpg';
 import socialPagesStore from '@/assets/portfolio/social-pages-store.jpg';
+import socialPagesStore2 from '@/assets/portfolio/social-pages-2.jpg';
+import socialPagesStore3 from '@/assets/portfolio/social-pages-3.jpg';
 import socialMediaMgmt from '@/assets/portfolio/social-media-mgmt.jpg';
+import socialMediaMgmt2 from '@/assets/portfolio/social-media-mgmt-2.jpg';
+import socialMediaMgmt3 from '@/assets/portfolio/social-media-mgmt-3.jpg';
 
 export const categories = [
   { ar: 'الكل', en: 'All' },
